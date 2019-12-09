@@ -19,29 +19,20 @@
 # Flag : OUTFLAG
 #	Use this flag to define how to to get an executable (e.g -o)
 OUTFLAG= -o
-
-TARGET=riscv64-unknown-elf
-
 # Flag : CC
 #	Use this flag to define compiler to use
-CC 		= $(TARGET)-gcc
+CC 		= gcc
 # Flag : LD
 #	Use this flag to define compiler to use
-LD		= $(TARGET)-ld
+LD		= gld
 # Flag : AS
 #	Use this flag to define compiler to use
-AS		= $(TARGET)-as
+AS		= gas
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
 PORT_CFLAGS = -O0 -g
 FLAGS_STR = "$(PORT_CFLAGS) $(XCFLAGS) $(XLFLAGS) $(LFLAGS_END)"
-
-INCLUDES = \
-			-I. \
-			-I$(PORT_DIR) \
-			-I$(PORT_DIR)/Supporting
-
-CFLAGS = $(PORT_CFLAGS) $(INCLUDES) -DFLAGS_STR=\"$(FLAGS_STR)\" 
+CFLAGS = $(PORT_CFLAGS) -I$(PORT_DIR) -I. -DFLAGS_STR=\"$(FLAGS_STR)\" 
 #Flag : LFLAGS_END
 #	Define any libraries needed for linking or other flags that should come at the end of the link line (e.g. linker scripts). 
 #	Note : On certain platforms, the default clock_gettime implementation is supported but requires linking of librt.
@@ -58,11 +49,7 @@ LFLAGS_END =
 # Flag : PORT_SRCS
 # 	Port specific source files can be added here
 #	You may also need cvt.c if the fcvt functions are not provided as intrinsics by your compiler!
-PORT_SRCS = $(PORT_DIR)/core_portme.c \
-			$(PORT_DIR)/ee_printf.c \
-			$(PORT_DIR)/Supporting/uart.c \
-			$(PORT_DIR)/Supporting/xuartns550.c
-
+PORT_SRCS = $(PORT_DIR)/core_portme.c $(PORT_DIR)/ee_printf.c
 vpath %.c $(PORT_DIR)
 vpath %.s $(PORT_DIR)
 

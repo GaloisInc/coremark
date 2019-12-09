@@ -18,8 +18,6 @@ Original Author: Shay Gal-on
 #include "coremark.h"
 #include "core_portme.h"
 
-#define CPU_CLOCK_HZ ((ee_u32)(50000000))
-
 #if VALIDATION_RUN
 	volatile ee_s32 seed1_volatile=0x3415;
 	volatile ee_s32 seed2_volatile=0x3415;
@@ -43,21 +41,7 @@ Original Author: Shay Gal-on
 	Sample implementation for standard time.h and windows.h definitions included.
 */
 CORETIMETYPE barebones_clock() {
-	
-	//return ticks since start / processing speed
-	ee_u32 cycle_lo, cycle_hi;
-	asm volatile(
-		"%=:\n\t"
-		"csrr %1, mcycleh\n\t"
-		"csrr %0, mcycle\n\t"
-		"csrr t1, mcycleh\n\t"
-		"bne  %1, t1, %=b"
-		: "=r"(cycle_lo), "=r"(cycle_hi)
-		: // No inputs.
-		: "t1");
-	
-	return (((((ee_u64)cycle_hi) << 32) | (ee_u64)cycle_lo) / CPU_CLOCK_HZ);
-
+	#error "You must implement a method to measure time in barebones_clock()! This function should return current time.\n"
 }
 /* Define : TIMER_RES_DIVIDER
 	Divider to trade off timer resolution and total time that can be measured.

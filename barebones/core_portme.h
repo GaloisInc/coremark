@@ -27,21 +27,21 @@ Original Author: Shay Gal-on
 	Define to 1 if the platform supports floating point.
 */
 #ifndef HAS_FLOAT 
-#define HAS_FLOAT 0
+#define HAS_FLOAT 1
 #endif
 /* Configuration : HAS_TIME_H
 	Define to 1 if platform has the time.h header file,
 	and implementation of functions thereof.
 */
 #ifndef HAS_TIME_H
-#define HAS_TIME_H 0
+#define HAS_TIME_H 1
 #endif
 /* Configuration : USE_CLOCK
 	Define to 1 if platform has the time.h header file,
 	and implementation of functions thereof.
 */
 #ifndef USE_CLOCK
-#define USE_CLOCK 0
+#define USE_CLOCK 1
 #endif
 /* Configuration : HAS_STDIO
 	Define to 1 if the platform has stdio.h.
@@ -71,7 +71,7 @@ Original Author: Shay Gal-on
  #define COMPILER_FLAGS FLAGS_STR /* "Please put compiler flags here (e.g. -o3)" */
 #endif
 #ifndef MEM_LOCATION 
- #define MEM_LOCATION "STATIC"
+ #define MEM_LOCATION "STACK"
 #endif
 
 /* Data Types :
@@ -121,7 +121,7 @@ typedef ee_u32 CORE_TICKS;
 	MEM_STACK - to allocate the data block on the stack (NYI).
 */
 #ifndef MEM_METHOD
-#define MEM_METHOD MEM_STATIC
+#define MEM_METHOD MEM_STACK
 #endif
 
 /* Configuration : MULTITHREAD
@@ -140,7 +140,7 @@ typedef ee_u32 CORE_TICKS;
 	to fit a particular architecture. 
 */
 #ifndef MULTITHREAD
-#define MULTITHREAD 0
+#define MULTITHREAD 1
 #define USE_PTHREAD 0
 #define USE_FORK 0
 #define USE_SOCKET 0
@@ -157,7 +157,7 @@ typedef ee_u32 CORE_TICKS;
 	This flag only matters if MULTITHREAD has been defined to a value greater then 1.
 */
 #ifndef MAIN_HAS_NOARGC 
-#define MAIN_HAS_NOARGC 1
+#define MAIN_HAS_NOARGC 0
 #endif
 
 /* Configuration : MAIN_HAS_NORETURN
@@ -168,11 +168,11 @@ typedef ee_u32 CORE_TICKS;
 	1 - platform does not support returning a value from main
 */
 #ifndef MAIN_HAS_NORETURN
-#define MAIN_HAS_NORETURN 1
+#define MAIN_HAS_NORETURN 0
 #endif
 
 /* Variable : default_num_contexts
-	Not used for this simple port, must contain the value 1.
+	Not used for this simple port, must cintain the value 1.
 */
 extern ee_u32 default_num_contexts;
 
