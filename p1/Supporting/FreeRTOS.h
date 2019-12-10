@@ -59,7 +59,7 @@ extern "C" {
 #include "projdefs.h"
 
 /* Definitions specific to the port being used. */
-#include "portable.h"
+//#include "portable.h"
 
 /* Must be defaulted before configUSE_NEWLIB_REENTRANT is used below. */
 #ifndef configUSE_NEWLIB_REENTRANT

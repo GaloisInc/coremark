@@ -27,7 +27,8 @@ TARGET=riscv64-unknown-elf
 CC 		= $(TARGET)-gcc
 # Flag : LD
 #	Use this flag to define compiler to use
-LD		= $(TARGET)-ld
+#LD		= $(TARGET)-ld
+LD		= $(TARGET)-gcc
 # Flag : AS
 #	Use this flag to define compiler to use
 AS		= $(TARGET)-as
@@ -38,14 +39,15 @@ FLAGS_STR = "$(PORT_CFLAGS) $(XCFLAGS) $(XLFLAGS) $(LFLAGS_END)"
 
 INCLUDES = \
 			-I. \
-			-I$(PORT_DIR) \
-			-I$(PORT_DIR)/Supporting
+			-I$(PORT_DIR)
+
+#			-I$(PORT_DIR)/Supporting
 
 CFLAGS = $(PORT_CFLAGS) $(INCLUDES) -DFLAGS_STR=\"$(FLAGS_STR)\" 
 #Flag : LFLAGS_END
 #	Define any libraries needed for linking or other flags that should come at the end of the link line (e.g. linker scripts). 
 #	Note : On certain platforms, the default clock_gettime implementation is supported but requires linking of librt.
-SEPARATE_COMPILE=1
+#SEPARATE_COMPILE=1
 # Flag : SEPARATE_COMPILE
 # You must also define below how to create an object file, and how to link.
 OBJOUT 	= -o
@@ -61,7 +63,8 @@ LFLAGS_END =
 PORT_SRCS = $(PORT_DIR)/core_portme.c \
 			$(PORT_DIR)/ee_printf.c \
 			$(PORT_DIR)/Supporting/uart.c \
-			$(PORT_DIR)/Supporting/xuartns550.c
+			$(PORT_DIR)/Supporting/xuartns550.c \
+			$(PORT_DIR)/Supporting/xbasic_types.c
 
 vpath %.c $(PORT_DIR)
 vpath %.s $(PORT_DIR)
@@ -76,7 +79,7 @@ LOAD = echo "Please set LOAD to the process of loading the executable to the fla
 RUN = echo "Please set LOAD to the process of running the executable (e.g. via jtag, or board reset)"
 
 OEXT = .o
-EXE = .bin
+EXE = .elf
 
 $(OPATH)$(PORT_DIR)/%$(OEXT) : %.c
 	$(CC) $(CFLAGS) $(XCFLAGS) $(COUT) $< $(OBJOUT) $@

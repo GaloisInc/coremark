@@ -1,0 +1,1250 @@
+In file included from coremark.h:38,
+                 from core_matrix.c:19:
+core_matrix.c: In function 'core_init_matrix':
+p1/core_portme.h:99:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   99 | #define align_mem(x) (void *)(4 + (((ee_ptr_int)(x) - 1) & ~3))
+      |                                     ^
+core_matrix.c:179:14: note: in expansion of macro 'align_mem'
+  179 |  A=(MATDAT *)align_mem(memblk);
+      |              ^~~~~~~~~
+p1/core_portme.h:99:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   99 | #define align_mem(x) (void *)(4 + (((ee_ptr_int)(x) - 1) & ~3))
+      |                      ^
+core_matrix.c:179:14: note: in expansion of macro 'align_mem'
+  179 |  A=(MATDAT *)align_mem(memblk);
+      |              ^~~~~~~~~
+p1/core_portme.h:99:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   99 | #define align_mem(x) (void *)(4 + (((ee_ptr_int)(x) - 1) & ~3))
+      |                                     ^
+core_matrix.c:197:17: note: in expansion of macro 'align_mem'
+  197 |  p->C=(MATRES *)align_mem(B+N*N);
+      |                 ^~~~~~~~~
+p1/core_portme.h:99:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   99 | #define align_mem(x) (void *)(4 + (((ee_ptr_int)(x) - 1) & ~3))
+      |                      ^
+core_matrix.c:197:17: note: in expansion of macro 'align_mem'
+  197 |  p->C=(MATRES *)align_mem(B+N*N);
+      |                 ^~~~~~~~~
+p1/core_portme.c: In function 'time_in_secs':
+p1/core_portme.c:72:27: error: 'CLOCKS_PER_SEC' undeclared (first use in this function); did you mean 'EE_TICKS_PER_SEC'?
+   72 | #define EE_TICKS_PER_SEC (CLOCKS_PER_SEC / TIMER_RES_DIVIDER)
+      |                           ^~~~~~~~~~~~~~
+p1/core_portme.c:115:48: note: in expansion of macro 'EE_TICKS_PER_SEC'
+  115 |  secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
+      |                                                ^~~~~~~~~~~~~~~~
+p1/core_portme.c:72:27: note: each undeclared identifier is reported only once for each function it appears in
+   72 | #define EE_TICKS_PER_SEC (CLOCKS_PER_SEC / TIMER_RES_DIVIDER)
+      |                           ^~~~~~~~~~~~~~
+p1/core_portme.c:115:48: note: in expansion of macro 'EE_TICKS_PER_SEC'
+  115 |  secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
+      |                                                ^~~~~~~~~~~~~~~~
+p1/ee_printf.c:17:10: fatal error: uart.h: No such file or directory
+   17 | #include "uart.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from p1/Supporting/bsp.h:217,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/FreeRTOS.h:1049:2: error: unknown type name 'TickType_t'
+ 1049 |  TickType_t xDummy2;
+      |  ^~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1063:2: error: unknown type name 'TickType_t'
+ 1063 |  TickType_t xDummy2;
+      |  ^~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1074:2: error: unknown type name 'UBaseType_t'
+ 1074 |  UBaseType_t uxDummy2;
+      |  ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1102:2: error: unknown type name 'UBaseType_t'
+ 1102 |  UBaseType_t   uxDummy5;
+      |  ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1112:3: error: unknown type name 'UBaseType_t'
+ 1112 |   UBaseType_t  uxDummy10[ 2 ];
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1115:3: error: unknown type name 'UBaseType_t'
+ 1115 |   UBaseType_t  uxDummy12[ 2 ];
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1166:3: error: unknown type name 'UBaseType_t'
+ 1166 |   UBaseType_t uxDummy2;
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1170:2: error: unknown type name 'UBaseType_t'
+ 1170 |  UBaseType_t uxDummy4[ 3 ];
+      |  ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1182:3: error: unknown type name 'UBaseType_t'
+ 1182 |   UBaseType_t uxDummy8;
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1205:2: error: unknown type name 'TickType_t'
+ 1205 |  TickType_t xDummy1;
+      |  ^~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1209:3: error: unknown type name 'UBaseType_t'
+ 1209 |   UBaseType_t uxDummy3;
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1236:2: error: unknown type name 'TickType_t'
+ 1236 |  TickType_t   xDummy3;
+      |  ^~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1240:3: error: unknown type name 'UBaseType_t'
+ 1240 |   UBaseType_t  uxDummy7;
+      |   ^~~~~~~~~~~
+p1/Supporting/FreeRTOS.h:1266:3: error: unknown type name 'UBaseType_t'
+ 1266 |   UBaseType_t uxDummy4;
+      |   ^~~~~~~~~~~
+In file included from p1/Supporting/task.h:36,
+                 from p1/Supporting/bsp.h:218,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/list.h:143:22: error: unknown type name 'TickType_t'
+  143 |  configLIST_VOLATILE TickType_t xItemValue;   /*< The value being listed.  In most cases this is used to sort the list in descending order. */
+      |                      ^~~~~~~~~~
+p1/Supporting/list.h:155:22: error: unknown type name 'TickType_t'
+  155 |  configLIST_VOLATILE TickType_t xItemValue;
+      |                      ^~~~~~~~~~
+p1/Supporting/list.h:167:11: error: unknown type name 'UBaseType_t'
+  167 |  volatile UBaseType_t uxNumberOfItems;
+      |           ^~~~~~~~~~~
+p1/Supporting/list.h: In function 'vListInitialise':
+p1/Supporting/list.h:345:47: error: expected declaration specifiers before 'PRIVILEGED_FUNCTION'
+  345 | void vListInitialise( List_t * const pxList ) PRIVILEGED_FUNCTION;
+      |                                               ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/list.h:356:55: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+  356 | void vListInitialiseItem( ListItem_t * const pxItem ) PRIVILEGED_FUNCTION;
+      |                                                       ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/list.h:369:77: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+  369 | void vListInsert( List_t * const pxList, ListItem_t * const pxNewListItem ) PRIVILEGED_FUNCTION;
+      |                                                                             ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/list.h:390:80: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+  390 | void vListInsertEnd( List_t * const pxList, ListItem_t * const pxNewListItem ) PRIVILEGED_FUNCTION;
+      |                                                                                ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/list.h:405:1: error: unknown type name 'UBaseType_t'
+  405 | UBaseType_t uxListRemove( ListItem_t * const pxItemToRemove ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/list.h:405:63: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+  405 | UBaseType_t uxListRemove( ListItem_t * const pxItemToRemove ) PRIVILEGED_FUNCTION;
+      |                                                               ^~~~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/bsp.h:218,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/task.h:69:1: warning: empty declaration
+   69 | struct tskTaskControlBlock; /* The old naming convention is used to prevent breaking kernel aware debuggers. */
+      | ^~~~~~
+p1/Supporting/task.h:70:37: error: storage class specified for parameter 'TaskHandle_t'
+   70 | typedef struct tskTaskControlBlock* TaskHandle_t;
+      |                                     ^~~~~~~~~~~~
+p1/Supporting/task.h:76:21: error: expected declaration specifiers or '...' before '*' token
+   76 | typedef BaseType_t (*TaskHookFunction_t)( void * );
+      |                     ^
+p1/Supporting/task.h:87:3: error: storage class specified for parameter 'eTaskState'
+   87 | } eTaskState;
+      |   ^~~~~~~~~~
+In file included from p1/Supporting/bsp.h:218,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/task.h:97:3: error: storage class specified for parameter 'eNotifyAction'
+   97 | } eNotifyAction;
+      |   ^~~~~~~~~~~~~
+p1/Supporting/task.h:104:2: error: unknown type name 'BaseType_t'
+  104 |  BaseType_t xOverflowCount;
+      |  ^~~~~~~~~~
+p1/Supporting/task.h:105:2: error: unknown type name 'TickType_t'
+  105 |  TickType_t xTimeOnEntering;
+      |  ^~~~~~~~~~
+p1/Supporting/task.h:106:3: error: storage class specified for parameter 'TimeOut_t'
+  106 | } TimeOut_t;
+      |   ^~~~~~~~~
+p1/Supporting/task.h:116:3: error: storage class specified for parameter 'MemoryRegion_t'
+  116 | } MemoryRegion_t;
+      |   ^~~~~~~~~~~~~~
+p1/Supporting/task.h:127:2: error: unknown type name 'UBaseType_t'
+  127 |  UBaseType_t uxPriority;
+      |  ^~~~~~~~~~~
+p1/Supporting/task.h:128:2: error: unknown type name 'StackType_t'
+  128 |  StackType_t *puxStackBuffer;
+      |  ^~~~~~~~~~~
+p1/Supporting/task.h:129:2: error: expected specifier-qualifier-list before 'MemoryRegion_t'
+  129 |  MemoryRegion_t xRegions[ portNUM_CONFIGURABLE_REGIONS ];
+      |  ^~~~~~~~~~~~~~
+p1/Supporting/task.h:133:3: error: storage class specified for parameter 'TaskParameters_t'
+  133 | } TaskParameters_t;
+      |   ^~~~~~~~~~~~~~~~
+p1/Supporting/task.h:139:2: error: expected specifier-qualifier-list before 'TaskHandle_t'
+  139 |  TaskHandle_t xHandle;   /* The handle of the task to which the rest of the information in the structure relates. */
+      |  ^~~~~~~~~~~~
+In file included from p1/Supporting/bsp.h:218,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/task.h:148:3: error: storage class specified for parameter 'TaskStatus_t'
+  148 | } TaskStatus_t;
+      |   ^~~~~~~~~~~~
+p1/Supporting/task.h:156:3: error: storage class specified for parameter 'eSleepModeStatus'
+  156 | } eSleepModeStatus;
+      |   ^~~~~~~~~~~~~~~~
+p1/Supporting/task.h:330:2: error: unknown type name 'BaseType_t'
+  330 |  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |  ^~~~~~~~~~
+p1/Supporting/task.h:334:8: error: unknown type name 'UBaseType_t'
+  334 |        UBaseType_t uxPriority,
+      |        ^~~~~~~~~~~
+p1/Supporting/task.h:335:8: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+  335 |        TaskHandle_t * const pxCreatedTask ) PRIVILEGED_FUNCTION;
+      |        ^~~~~~~~~~~~
+p1/Supporting/task.h:665:31: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+  665 | void vTaskAllocateMPURegions( TaskHandle_t xTask, const MemoryRegion_t * const pxRegions ) PRIVILEGED_FUNCTION;
+      |                               ^~~~~~~~~~~~
+p1/Supporting/task.h:665:57: warning: type defaults to 'int' in declaration of 'MemoryRegion_t' [-Wimplicit-int]
+  665 | void vTaskAllocateMPURegions( TaskHandle_t xTask, const MemoryRegion_t * const pxRegions ) PRIVILEGED_FUNCTION;
+      |                                                         ^~~~~~~~~~~~~~
+p1/Supporting/task.h:665:72: error: expected ';', ',' or ')' before '*' token
+  665 | void vTaskAllocateMPURegions( TaskHandle_t xTask, const MemoryRegion_t * const pxRegions ) PRIVILEGED_FUNCTION;
+      |                                                                        ^
+p1/Supporting/task.h:706:19: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+  706 | void vTaskDelete( TaskHandle_t xTaskToDelete ) PRIVILEGED_FUNCTION;
+      |                   ^~~~~~~~~~~~
+p1/Supporting/task.h:758:24: error: unknown type name 'TickType_t'
+  758 | void vTaskDelay( const TickType_t xTicksToDelay ) PRIVILEGED_FUNCTION;
+      |                        ^~~~~~~~~~
+p1/Supporting/task.h:758:51: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+  758 | void vTaskDelay( const TickType_t xTicksToDelay ) PRIVILEGED_FUNCTION;
+      |                                                   ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:817:23: error: unknown type name 'TickType_t'
+  817 | void vTaskDelayUntil( TickType_t * const pxPreviousWakeTime, const TickType_t xTimeIncrement ) PRIVILEGED_FUNCTION;
+      |                       ^~~~~~~~~~
+p1/Supporting/task.h:817:68: error: unknown type name 'TickType_t'
+  817 | void vTaskDelayUntil( TickType_t * const pxPreviousWakeTime, const TickType_t xTimeIncrement ) PRIVILEGED_FUNCTION;
+      |                                                                    ^~~~~~~~~~
+p1/Supporting/task.h:842:1: error: unknown type name 'BaseType_t'
+  842 | BaseType_t xTaskAbortDelay( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:842:29: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+  842 | BaseType_t xTaskAbortDelay( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                             ^~~~~~~~~~~~
+p1/Supporting/task.h:889:1: error: unknown type name 'UBaseType_t'
+  889 | UBaseType_t uxTaskPriorityGet( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:889:38: warning: type defaults to 'int' in declaration of 'TaskHandle_t' [-Wimplicit-int]
+  889 | UBaseType_t uxTaskPriorityGet( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~
+p1/Supporting/task.h:889:51: error: expected ';', ',' or ')' before 'xTask'
+  889 | UBaseType_t uxTaskPriorityGet( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                                   ^~~~~
+p1/Supporting/task.h:897:1: error: unknown type name 'UBaseType_t'
+  897 | UBaseType_t uxTaskPriorityGetFromISR( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:897:45: warning: type defaults to 'int' in declaration of 'TaskHandle_t' [-Wimplicit-int]
+  897 | UBaseType_t uxTaskPriorityGetFromISR( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                             ^~~~~~~~~~~~
+p1/Supporting/task.h:897:58: error: expected ';', ',' or ')' before 'xTask'
+  897 | UBaseType_t uxTaskPriorityGetFromISR( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                                          ^~~~~
+p1/Supporting/task.h:915:1: error: expected declaration specifiers before 'eTaskState'
+  915 | eTaskState eTaskGetState( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:971:20: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+  971 | void vTaskGetInfo( TaskHandle_t xTask, TaskStatus_t *pxTaskStatus, BaseType_t xGetFreeStackSpace, eTaskState eState ) PRIVILEGED_FUNCTION;
+      |                    ^~~~~~~~~~~~
+p1/Supporting/task.h:971:40: error: expected declaration specifiers or '...' before 'TaskStatus_t'
+  971 | void vTaskGetInfo( TaskHandle_t xTask, TaskStatus_t *pxTaskStatus, BaseType_t xGetFreeStackSpace, eTaskState eState ) PRIVILEGED_FUNCTION;
+      |                                        ^~~~~~~~~~~~
+p1/Supporting/task.h:971:68: error: unknown type name 'BaseType_t'
+  971 | void vTaskGetInfo( TaskHandle_t xTask, TaskStatus_t *pxTaskStatus, BaseType_t xGetFreeStackSpace, eTaskState eState ) PRIVILEGED_FUNCTION;
+      |                                                                    ^~~~~~~~~~
+p1/Supporting/task.h:971:99: error: expected declaration specifiers or '...' before 'eTaskState'
+  971 | void vTaskGetInfo( TaskHandle_t xTask, TaskStatus_t *pxTaskStatus, BaseType_t xGetFreeStackSpace, eTaskState eState ) PRIVILEGED_FUNCTION;
+      |                                                                                                   ^~~~~~~~~~
+p1/Supporting/task.h:1013:24: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1013 | void vTaskPrioritySet( TaskHandle_t xTask, UBaseType_t uxNewPriority ) PRIVILEGED_FUNCTION;
+      |                        ^~~~~~~~~~~~
+p1/Supporting/task.h:1013:44: error: unknown type name 'UBaseType_t'
+ 1013 | void vTaskPrioritySet( TaskHandle_t xTask, UBaseType_t uxNewPriority ) PRIVILEGED_FUNCTION;
+      |                                            ^~~~~~~~~~~
+p1/Supporting/task.h:1064:20: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1064 | void vTaskSuspend( TaskHandle_t xTaskToSuspend ) PRIVILEGED_FUNCTION;
+      |                    ^~~~~~~~~~~~
+p1/Supporting/task.h:1113:19: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1113 | void vTaskResume( TaskHandle_t xTaskToResume ) PRIVILEGED_FUNCTION;
+      |                   ^~~~~~~~~~~~
+p1/Supporting/task.h:1142:1: error: unknown type name 'BaseType_t'
+ 1142 | BaseType_t xTaskResumeFromISR( TaskHandle_t xTaskToResume ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1142:32: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1142 | BaseType_t xTaskResumeFromISR( TaskHandle_t xTaskToResume ) PRIVILEGED_FUNCTION;
+      |                                ^~~~~~~~~~~~
+p1/Supporting/task.h:1175:34: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1175 | void vTaskStartScheduler( void ) PRIVILEGED_FUNCTION;
+      |                                  ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1231:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1231 | void vTaskEndScheduler( void ) PRIVILEGED_FUNCTION;
+      |                                ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1282:30: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1282 | void vTaskSuspendAll( void ) PRIVILEGED_FUNCTION;
+      |                              ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1336:1: error: unknown type name 'BaseType_t'
+ 1336 | BaseType_t xTaskResumeAll( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1336:35: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1336 | BaseType_t xTaskResumeAll( void ) PRIVILEGED_FUNCTION;
+      |                                   ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1351:1: error: unknown type name 'TickType_t'
+ 1351 | TickType_t xTaskGetTickCount( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1351:38: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1351 | TickType_t xTaskGetTickCount( void ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1367:1: error: unknown type name 'TickType_t'
+ 1367 | TickType_t xTaskGetTickCountFromISR( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1367:45: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1367 | TickType_t xTaskGetTickCountFromISR( void ) PRIVILEGED_FUNCTION;
+      |                                             ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1381:1: error: unknown type name 'UBaseType_t'
+ 1381 | UBaseType_t uxTaskGetNumberOfTasks( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:1381:44: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1381 | UBaseType_t uxTaskGetNumberOfTasks( void ) PRIVILEGED_FUNCTION;
+      |                                            ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1394:22: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1394 | char *pcTaskGetName( TaskHandle_t xTaskToQuery ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      |                      ^~~~~~~~~~~~
+p1/Supporting/task.h:1410:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 1410 | TaskHandle_t xTaskGetHandle( const char *pcNameToQuery ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      | ^~~~~~~~~~~~
+p1/Supporting/task.h:1437:1: error: unknown type name 'UBaseType_t'
+ 1437 | UBaseType_t uxTaskGetStackHighWaterMark( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:1437:42: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1437 | UBaseType_t uxTaskGetStackHighWaterMark( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                          ^~~~~~~~~~~~
+p1/Supporting/task.h:1464:54: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1464 | configSTACK_DEPTH_TYPE uxTaskGetStackHighWaterMark2( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                                      ^~~~~~~~~~~~
+p1/Supporting/task.h:1528:1: error: unknown type name 'BaseType_t'
+ 1528 | BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask, void *pvParameter ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1528:42: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1528 | BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask, void *pvParameter ) PRIVILEGED_FUNCTION;
+      |                                          ^~~~~~~~~~~~
+p1/Supporting/task.h:1537:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 1537 | TaskHandle_t xTaskGetIdleTaskHandle( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~
+p1/Supporting/task.h:1636:1: error: unknown type name 'UBaseType_t'
+ 1636 | UBaseType_t uxTaskGetSystemState( TaskStatus_t * const pxTaskStatusArray, const UBaseType_t uxArraySize, uint32_t * const pulTotalRunTime ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:1636:35: error: expected declaration specifiers or '...' before 'TaskStatus_t'
+ 1636 | UBaseType_t uxTaskGetSystemState( TaskStatus_t * const pxTaskStatusArray, const UBaseType_t uxArraySize, uint32_t * const pulTotalRunTime ) PRIVILEGED_FUNCTION;
+      |                                   ^~~~~~~~~~~~
+p1/Supporting/task.h:1636:81: error: unknown type name 'UBaseType_t'
+ 1636 | UBaseType_t uxTaskGetSystemState( TaskStatus_t * const pxTaskStatusArray, const UBaseType_t uxArraySize, uint32_t * const pulTotalRunTime ) PRIVILEGED_FUNCTION;
+      |                                                                                 ^~~~~~~~~~~
+p1/Supporting/task.h:1683:40: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1683 | void vTaskList( char * pcWriteBuffer ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      |                                        ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1737:50: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1737 | void vTaskGetRunTimeStats( char *pcWriteBuffer ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      |                                                  ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1767:1: error: unknown type name 'TickType_t'
+ 1767 | TickType_t xTaskGetIdleRunTimeCounter( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1767:47: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 1767 | TickType_t xTaskGetIdleRunTimeCounter( void ) PRIVILEGED_FUNCTION;
+      |                                               ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:1848:1: error: unknown type name 'BaseType_t'
+ 1848 | BaseType_t xTaskGenericNotify( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1848:32: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1848 | BaseType_t xTaskGenericNotify( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue ) PRIVILEGED_FUNCTION;
+      |                                ^~~~~~~~~~~~
+p1/Supporting/task.h:1848:78: error: expected declaration specifiers or '...' before 'eNotifyAction'
+ 1848 | BaseType_t xTaskGenericNotify( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue ) PRIVILEGED_FUNCTION;
+      |                                                                              ^~~~~~~~~~~~~
+p1/Supporting/task.h:1939:1: error: unknown type name 'BaseType_t'
+ 1939 | BaseType_t xTaskGenericNotifyFromISR( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:1939:39: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 1939 | BaseType_t xTaskGenericNotifyFromISR( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                       ^~~~~~~~~~~~
+p1/Supporting/task.h:1939:85: error: expected declaration specifiers or '...' before 'eNotifyAction'
+ 1939 | BaseType_t xTaskGenericNotifyFromISR( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                                                     ^~~~~~~~~~~~~
+p1/Supporting/task.h:1939:148: error: unknown type name 'BaseType_t'
+ 1939 | BaseType_t xTaskGenericNotifyFromISR( TaskHandle_t xTaskToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t *pulPreviousNotificationValue, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                                                                                                                    ^~~~~~~~~~
+p1/Supporting/task.h:2016:1: error: unknown type name 'BaseType_t'
+ 2016 | BaseType_t xTaskNotifyWait( uint32_t ulBitsToClearOnEntry, uint32_t ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2016:122: error: unknown type name 'TickType_t'
+ 2016 | BaseType_t xTaskNotifyWait( uint32_t ulBitsToClearOnEntry, uint32_t ulBitsToClearOnExit, uint32_t *pulNotificationValue, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                                                                          ^~~~~~~~~~
+p1/Supporting/task.h:2117:30: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2117 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                              ^~~~~~~~~~~~
+p1/Supporting/task.h:2117:58: error: unknown type name 'BaseType_t'
+ 2117 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                          ^~~~~~~~~~
+p1/Supporting/task.h:2186:28: error: unknown type name 'BaseType_t'
+ 2186 | uint32_t ulTaskNotifyTake( BaseType_t xClearCountOnExit, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                            ^~~~~~~~~~
+p1/Supporting/task.h:2186:58: error: unknown type name 'TickType_t'
+ 2186 | uint32_t ulTaskNotifyTake( BaseType_t xClearCountOnExit, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                          ^~~~~~~~~~
+p1/Supporting/task.h:2202:1: error: unknown type name 'BaseType_t'
+ 2202 | BaseType_t xTaskNotifyStateClear( TaskHandle_t xTask );
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2202:35: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2202 | BaseType_t xTaskNotifyStateClear( TaskHandle_t xTask );
+      |                                   ^~~~~~~~~~~~
+p1/Supporting/task.h:2223:1: error: unknown type name 'BaseType_t'
+ 2223 | BaseType_t xTaskIncrementTick( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2223:39: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2223 | BaseType_t xTaskIncrementTick( void ) PRIVILEGED_FUNCTION;
+      |                                       ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2256:63: error: unknown type name 'TickType_t'
+ 2256 | void vTaskPlaceOnEventList( List_t * const pxEventList, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                               ^~~~~~~~~~
+p1/Supporting/task.h:2256:89: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2256 | void vTaskPlaceOnEventList( List_t * const pxEventList, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                                         ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2257:66: error: unknown type name 'TickType_t'
+ 2257 | void vTaskPlaceOnUnorderedEventList( List_t * pxEventList, const TickType_t xItemValue, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                  ^~~~~~~~~~
+p1/Supporting/task.h:2257:95: error: unknown type name 'TickType_t'
+ 2257 | void vTaskPlaceOnUnorderedEventList( List_t * pxEventList, const TickType_t xItemValue, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                                               ^~~~~~~~~~
+p1/Supporting/task.h:2257:121: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2257 | void vTaskPlaceOnUnorderedEventList( List_t * pxEventList, const TickType_t xItemValue, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                                                                         ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2270:67: error: unknown type name 'TickType_t'
+ 2270 | void vTaskPlaceOnEventListRestricted( List_t * const pxEventList, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely ) PRIVILEGED_FUNCTION;
+      |                                                                   ^~~~~~~~~~
+p1/Supporting/task.h:2270:98: error: unknown type name 'BaseType_t'
+ 2270 | void vTaskPlaceOnEventListRestricted( List_t * const pxEventList, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely ) PRIVILEGED_FUNCTION;
+      |                                                                                                  ^~~~~~~~~~
+p1/Supporting/task.h:2296:1: error: unknown type name 'BaseType_t'
+ 2296 | BaseType_t xTaskRemoveFromEventList( const List_t * const pxEventList ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2296:73: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2296 | BaseType_t xTaskRemoveFromEventList( const List_t * const pxEventList ) PRIVILEGED_FUNCTION;
+      |                                                                         ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2297:77: error: unknown type name 'TickType_t'
+ 2297 | void vTaskRemoveFromUnorderedEventList( ListItem_t * pxEventListItem, const TickType_t xItemValue ) PRIVILEGED_FUNCTION;
+      |                                                                             ^~~~~~~~~~
+p1/Supporting/task.h:2297:101: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2297 | void vTaskRemoveFromUnorderedEventList( ListItem_t * pxEventListItem, const TickType_t xItemValue ) PRIVILEGED_FUNCTION;
+      |                                                                                                     ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2307:50: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2307 | portDONT_DISCARD void vTaskSwitchContext( void ) PRIVILEGED_FUNCTION;
+      |                                                  ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2313:1: error: unknown type name 'TickType_t'
+ 2313 | TickType_t uxTaskResetEventItemValue( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2313:46: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2313 | TickType_t uxTaskResetEventItemValue( void ) PRIVILEGED_FUNCTION;
+      |                                              ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2318:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 2318 | TaskHandle_t xTaskGetCurrentTaskHandle( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~
+p1/Supporting/task.h:2323:28: error: expected declaration specifiers or '...' before 'TimeOut_t'
+ 2323 | void vTaskSetTimeOutState( TimeOut_t * const pxTimeOut ) PRIVILEGED_FUNCTION;
+      |                            ^~~~~~~~~
+p1/Supporting/task.h:2329:1: error: unknown type name 'BaseType_t'
+ 2329 | BaseType_t xTaskCheckForTimeOut( TimeOut_t * const pxTimeOut, TickType_t * const pxTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2329:34: error: expected declaration specifiers or '...' before 'TimeOut_t'
+ 2329 | BaseType_t xTaskCheckForTimeOut( TimeOut_t * const pxTimeOut, TickType_t * const pxTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                  ^~~~~~~~~
+p1/Supporting/task.h:2329:63: error: unknown type name 'TickType_t'
+ 2329 | BaseType_t xTaskCheckForTimeOut( TimeOut_t * const pxTimeOut, TickType_t * const pxTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                               ^~~~~~~~~~
+p1/Supporting/task.h:2335:31: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2335 | void vTaskMissedYield( void ) PRIVILEGED_FUNCTION;
+      |                               ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2341:1: error: unknown type name 'BaseType_t'
+ 2341 | BaseType_t xTaskGetSchedulerState( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2341:43: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2341 | BaseType_t xTaskGetSchedulerState( void ) PRIVILEGED_FUNCTION;
+      |                                           ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2347:1: error: unknown type name 'BaseType_t'
+ 2347 | BaseType_t xTaskPriorityInherit( TaskHandle_t const pxMutexHolder ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2347:34: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2347 | BaseType_t xTaskPriorityInherit( TaskHandle_t const pxMutexHolder ) PRIVILEGED_FUNCTION;
+      |                                  ^~~~~~~~~~~~
+p1/Supporting/task.h:2353:1: error: unknown type name 'BaseType_t'
+ 2353 | BaseType_t xTaskPriorityDisinherit( TaskHandle_t const pxMutexHolder ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/task.h:2353:37: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2353 | BaseType_t xTaskPriorityDisinherit( TaskHandle_t const pxMutexHolder ) PRIVILEGED_FUNCTION;
+      |                                     ^~~~~~~~~~~~
+p1/Supporting/task.h:2363:43: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2363 | void vTaskPriorityDisinheritAfterTimeout( TaskHandle_t const pxMutexHolder, UBaseType_t uxHighestPriorityWaitingTask ) PRIVILEGED_FUNCTION;
+      |                                           ^~~~~~~~~~~~
+p1/Supporting/task.h:2363:77: error: unknown type name 'UBaseType_t'
+ 2363 | void vTaskPriorityDisinheritAfterTimeout( TaskHandle_t const pxMutexHolder, UBaseType_t uxHighestPriorityWaitingTask ) PRIVILEGED_FUNCTION;
+      |                                                                             ^~~~~~~~~~~
+p1/Supporting/task.h:2368:1: error: unknown type name 'UBaseType_t'
+ 2368 | UBaseType_t uxTaskGetTaskNumber( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/task.h:2368:34: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2368 | UBaseType_t uxTaskGetTaskNumber( TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+      |                                  ^~~~~~~~~~~~
+p1/Supporting/task.h:2374:26: error: expected declaration specifiers or '...' before 'TaskHandle_t'
+ 2374 | void vTaskSetTaskNumber( TaskHandle_t xTask, const UBaseType_t uxHandle ) PRIVILEGED_FUNCTION;
+      |                          ^~~~~~~~~~~~
+p1/Supporting/task.h:2374:52: error: unknown type name 'UBaseType_t'
+ 2374 | void vTaskSetTaskNumber( TaskHandle_t xTask, const UBaseType_t uxHandle ) PRIVILEGED_FUNCTION;
+      |                                                    ^~~~~~~~~~~
+p1/Supporting/task.h:2384:27: error: unknown type name 'TickType_t'
+ 2384 | void vTaskStepTick( const TickType_t xTicksToJump ) PRIVILEGED_FUNCTION;
+      |                           ^~~~~~~~~~
+p1/Supporting/task.h:2384:53: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'PRIVILEGED_FUNCTION'
+ 2384 | void vTaskStepTick( const TickType_t xTicksToJump ) PRIVILEGED_FUNCTION;
+      |                                                     ^~~~~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2400:1: error: expected declaration specifiers before 'eSleepModeStatus'
+ 2400 | eSleepModeStatus eTaskConfirmSleepModeStatus( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~~~~
+p1/Supporting/task.h:2406:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 2406 | TaskHandle_t pvTaskIncrementMutexHeldCount( void ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~
+p1/Supporting/task.h:2412:36: error: expected declaration specifiers or '...' before 'TimeOut_t'
+ 2412 | void vTaskInternalSetTimeOutState( TimeOut_t * const pxTimeOut ) PRIVILEGED_FUNCTION;
+      |                                    ^~~~~~~~~
+In file included from p1/Supporting/semphr.h:35,
+                 from p1/Supporting/uart.c:6:
+p1/Supporting/queue.h:47:1: warning: empty declaration
+   47 | struct QueueDefinition; /* Using old naming convention so as not to break kernel aware debuggers. */
+      | ^~~~~~
+p1/Supporting/queue.h:48:34: error: storage class specified for parameter 'QueueHandle_t'
+   48 | typedef struct QueueDefinition * QueueHandle_t;
+      |                                  ^~~~~~~~~~~~~
+p1/Supporting/queue.h:55:34: error: storage class specified for parameter 'QueueSetHandle_t'
+   55 | typedef struct QueueDefinition * QueueSetHandle_t;
+      |                                  ^~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:62:34: error: storage class specified for parameter 'QueueSetMemberHandle_t'
+   62 | typedef struct QueueDefinition * QueueSetMemberHandle_t;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/semphr.h:35,
+                 from p1/Supporting/uart.c:6:
+p1/Supporting/queue.h:650:1: error: unknown type name 'BaseType_t'
+  650 | BaseType_t xQueueGenericSend( QueueHandle_t xQueue, const void * const pvItemToQueue, TickType_t xTicksToWait, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:650:31: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+  650 | BaseType_t xQueueGenericSend( QueueHandle_t xQueue, const void * const pvItemToQueue, TickType_t xTicksToWait, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                               ^~~~~~~~~~~~~
+p1/Supporting/queue.h:650:87: error: unknown type name 'TickType_t'
+  650 | BaseType_t xQueueGenericSend( QueueHandle_t xQueue, const void * const pvItemToQueue, TickType_t xTicksToWait, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                                                                                       ^~~~~~~~~~
+p1/Supporting/queue.h:650:118: error: unknown type name 'BaseType_t'
+  650 | BaseType_t xQueueGenericSend( QueueHandle_t xQueue, const void * const pvItemToQueue, TickType_t xTicksToWait, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                                                                                                                      ^~~~~~~~~~
+p1/Supporting/queue.h:744:1: error: unknown type name 'BaseType_t'
+  744 | BaseType_t xQueuePeek( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:744:24: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+  744 | BaseType_t xQueuePeek( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                        ^~~~~~~~~~~~~
+p1/Supporting/queue.h:744:69: error: unknown type name 'TickType_t'
+  744 | BaseType_t xQueuePeek( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                     ^~~~~~~~~~
+p1/Supporting/queue.h:777:1: error: unknown type name 'BaseType_t'
+  777 | BaseType_t xQueuePeekFromISR( QueueHandle_t xQueue, void * const pvBuffer ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:777:31: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+  777 | BaseType_t xQueuePeekFromISR( QueueHandle_t xQueue, void * const pvBuffer ) PRIVILEGED_FUNCTION;
+      |                               ^~~~~~~~~~~~~
+p1/Supporting/queue.h:868:1: error: unknown type name 'BaseType_t'
+  868 | BaseType_t xQueueReceive( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:868:27: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+  868 | BaseType_t xQueueReceive( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                           ^~~~~~~~~~~~~
+p1/Supporting/queue.h:868:72: error: unknown type name 'TickType_t'
+  868 | BaseType_t xQueueReceive( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                                        ^~~~~~~~~~
+p1/Supporting/queue.h:883:1: error: unknown type name 'UBaseType_t'
+  883 | UBaseType_t uxQueueMessagesWaiting( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/queue.h:883:43: warning: type defaults to 'int' in declaration of 'QueueHandle_t' [-Wimplicit-int]
+  883 | UBaseType_t uxQueueMessagesWaiting( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                           ^~~~~~~~~~~~~
+p1/Supporting/queue.h:883:57: error: expected ';', ',' or ')' before 'xQueue'
+  883 | UBaseType_t uxQueueMessagesWaiting( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                         ^~~~~~
+p1/Supporting/queue.h:900:1: error: unknown type name 'UBaseType_t'
+  900 | UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/queue.h:900:43: warning: type defaults to 'int' in declaration of 'QueueHandle_t' [-Wimplicit-int]
+  900 | UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                           ^~~~~~~~~~~~~
+p1/Supporting/queue.h:900:57: error: expected ';', ',' or ')' before 'xQueue'
+  900 | UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                         ^~~~~~
+p1/Supporting/queue.h:914:20: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+  914 | void vQueueDelete( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                    ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1295:1: error: unknown type name 'BaseType_t'
+ 1295 | BaseType_t xQueueGenericSendFromISR( QueueHandle_t xQueue, const void * const pvItemToQueue, BaseType_t * const pxHigherPriorityTaskWoken, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1295:38: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1295 | BaseType_t xQueueGenericSendFromISR( QueueHandle_t xQueue, const void * const pvItemToQueue, BaseType_t * const pxHigherPriorityTaskWoken, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1295:94: error: unknown type name 'BaseType_t'
+ 1295 | BaseType_t xQueueGenericSendFromISR( QueueHandle_t xQueue, const void * const pvItemToQueue, BaseType_t * const pxHigherPriorityTaskWoken, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                                                                                              ^~~~~~~~~~
+p1/Supporting/queue.h:1295:146: error: unknown type name 'BaseType_t'
+ 1295 | BaseType_t xQueueGenericSendFromISR( QueueHandle_t xQueue, const void * const pvItemToQueue, BaseType_t * const pxHigherPriorityTaskWoken, const BaseType_t xCopyPosition ) PRIVILEGED_FUNCTION;
+      |                                                                                                                                                  ^~~~~~~~~~
+p1/Supporting/queue.h:1296:1: error: unknown type name 'BaseType_t'
+ 1296 | BaseType_t xQueueGiveFromISR( QueueHandle_t xQueue, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1296:31: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1296 | BaseType_t xQueueGiveFromISR( QueueHandle_t xQueue, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                               ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1296:53: error: unknown type name 'BaseType_t'
+ 1296 | BaseType_t xQueueGiveFromISR( QueueHandle_t xQueue, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                     ^~~~~~~~~~
+p1/Supporting/queue.h:1385:1: error: unknown type name 'BaseType_t'
+ 1385 | BaseType_t xQueueReceiveFromISR( QueueHandle_t xQueue, void * const pvBuffer, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1385:34: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1385 | BaseType_t xQueueReceiveFromISR( QueueHandle_t xQueue, void * const pvBuffer, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                  ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1385:79: error: unknown type name 'BaseType_t'
+ 1385 | BaseType_t xQueueReceiveFromISR( QueueHandle_t xQueue, void * const pvBuffer, BaseType_t * const pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                                               ^~~~~~~~~~
+p1/Supporting/queue.h:1391:1: error: unknown type name 'BaseType_t'
+ 1391 | BaseType_t xQueueIsQueueEmptyFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1391:45: warning: type defaults to 'int' in declaration of 'QueueHandle_t' [-Wimplicit-int]
+ 1391 | BaseType_t xQueueIsQueueEmptyFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                             ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1391:59: error: expected ';', ',' or ')' before 'xQueue'
+ 1391 | BaseType_t xQueueIsQueueEmptyFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                           ^~~~~~
+p1/Supporting/queue.h:1392:1: error: unknown type name 'BaseType_t'
+ 1392 | BaseType_t xQueueIsQueueFullFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1392:44: warning: type defaults to 'int' in declaration of 'QueueHandle_t' [-Wimplicit-int]
+ 1392 | BaseType_t xQueueIsQueueFullFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                            ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1392:58: error: expected ';', ',' or ')' before 'xQueue'
+ 1392 | BaseType_t xQueueIsQueueFullFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                          ^~~~~~
+p1/Supporting/queue.h:1393:1: error: unknown type name 'UBaseType_t'
+ 1393 | UBaseType_t uxQueueMessagesWaitingFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/queue.h:1393:50: warning: type defaults to 'int' in declaration of 'QueueHandle_t' [-Wimplicit-int]
+ 1393 | UBaseType_t uxQueueMessagesWaitingFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                  ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1393:64: error: expected ';', ',' or ')' before 'xQueue'
+ 1393 | UBaseType_t uxQueueMessagesWaitingFromISR( const QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                                                ^~~~~~
+p1/Supporting/queue.h:1404:1: error: unknown type name 'BaseType_t'
+ 1404 | BaseType_t xQueueCRSendFromISR( QueueHandle_t xQueue, const void *pvItemToQueue, BaseType_t xCoRoutinePreviouslyWoken );
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1404:33: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1404 | BaseType_t xQueueCRSendFromISR( QueueHandle_t xQueue, const void *pvItemToQueue, BaseType_t xCoRoutinePreviouslyWoken );
+      |                                 ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1404:82: error: unknown type name 'BaseType_t'
+ 1404 | BaseType_t xQueueCRSendFromISR( QueueHandle_t xQueue, const void *pvItemToQueue, BaseType_t xCoRoutinePreviouslyWoken );
+      |                                                                                  ^~~~~~~~~~
+p1/Supporting/queue.h:1405:1: error: unknown type name 'BaseType_t'
+ 1405 | BaseType_t xQueueCRReceiveFromISR( QueueHandle_t xQueue, void *pvBuffer, BaseType_t *pxTaskWoken );
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1405:36: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1405 | BaseType_t xQueueCRReceiveFromISR( QueueHandle_t xQueue, void *pvBuffer, BaseType_t *pxTaskWoken );
+      |                                    ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1405:74: error: unknown type name 'BaseType_t'
+ 1405 | BaseType_t xQueueCRReceiveFromISR( QueueHandle_t xQueue, void *pvBuffer, BaseType_t *pxTaskWoken );
+      |                                                                          ^~~~~~~~~~
+p1/Supporting/queue.h:1406:1: error: unknown type name 'BaseType_t'
+ 1406 | BaseType_t xQueueCRSend( QueueHandle_t xQueue, const void *pvItemToQueue, TickType_t xTicksToWait );
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1406:26: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1406 | BaseType_t xQueueCRSend( QueueHandle_t xQueue, const void *pvItemToQueue, TickType_t xTicksToWait );
+      |                          ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1406:75: error: unknown type name 'TickType_t'
+ 1406 | BaseType_t xQueueCRSend( QueueHandle_t xQueue, const void *pvItemToQueue, TickType_t xTicksToWait );
+      |                                                                           ^~~~~~~~~~
+p1/Supporting/queue.h:1407:1: error: unknown type name 'BaseType_t'
+ 1407 | BaseType_t xQueueCRReceive( QueueHandle_t xQueue, void *pvBuffer, TickType_t xTicksToWait );
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1407:29: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1407 | BaseType_t xQueueCRReceive( QueueHandle_t xQueue, void *pvBuffer, TickType_t xTicksToWait );
+      |                             ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1407:67: error: unknown type name 'TickType_t'
+ 1407 | BaseType_t xQueueCRReceive( QueueHandle_t xQueue, void *pvBuffer, TickType_t xTicksToWait );
+      |                                                                   ^~~~~~~~~~
+p1/Supporting/queue.h:1414:1: error: expected declaration specifiers before 'QueueHandle_t'
+ 1414 | QueueHandle_t xQueueCreateMutex( const uint8_t ucQueueType ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1415:1: error: expected declaration specifiers before 'QueueHandle_t'
+ 1415 | QueueHandle_t xQueueCreateMutexStatic( const uint8_t ucQueueType, StaticQueue_t *pxStaticQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1416:1: error: expected declaration specifiers before 'QueueHandle_t'
+ 1416 | QueueHandle_t xQueueCreateCountingSemaphore( const UBaseType_t uxMaxCount, const UBaseType_t uxInitialCount ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1417:1: error: expected declaration specifiers before 'QueueHandle_t'
+ 1417 | QueueHandle_t xQueueCreateCountingSemaphoreStatic( const UBaseType_t uxMaxCount, const UBaseType_t uxInitialCount, StaticQueue_t *pxStaticQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1418:1: error: unknown type name 'BaseType_t'
+ 1418 | BaseType_t xQueueSemaphoreTake( QueueHandle_t xQueue, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1418:33: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1418 | BaseType_t xQueueSemaphoreTake( QueueHandle_t xQueue, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                 ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1418:55: error: unknown type name 'TickType_t'
+ 1418 | BaseType_t xQueueSemaphoreTake( QueueHandle_t xQueue, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                       ^~~~~~~~~~
+p1/Supporting/queue.h:1419:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 1419 | TaskHandle_t xQueueGetMutexHolder( QueueHandle_t xSemaphore ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~
+p1/Supporting/queue.h:1420:1: error: expected declaration specifiers before 'TaskHandle_t'
+ 1420 | TaskHandle_t xQueueGetMutexHolderFromISR( QueueHandle_t xSemaphore ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~
+p1/Supporting/queue.h:1426:1: error: unknown type name 'BaseType_t'
+ 1426 | BaseType_t xQueueTakeMutexRecursive( QueueHandle_t xMutex, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1426:38: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1426 | BaseType_t xQueueTakeMutexRecursive( QueueHandle_t xMutex, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1426:60: error: unknown type name 'TickType_t'
+ 1426 | BaseType_t xQueueTakeMutexRecursive( QueueHandle_t xMutex, TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      |                                                            ^~~~~~~~~~
+p1/Supporting/queue.h:1427:1: error: unknown type name 'BaseType_t'
+ 1427 | BaseType_t xQueueGiveMutexRecursive( QueueHandle_t xMutex ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1427:38: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1427 | BaseType_t xQueueGiveMutexRecursive( QueueHandle_t xMutex ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1458:28: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1458 |  void vQueueAddToRegistry( QueueHandle_t xQueue, const char *pcQueueName ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      |                            ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1472:30: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1472 |  void vQueueUnregisterQueue( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                              ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1487:30: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1487 |  const char *pcQueueGetName( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+      |                              ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1496:2: error: expected declaration specifiers before 'QueueHandle_t'
+ 1496 |  QueueHandle_t xQueueGenericCreate( const UBaseType_t uxQueueLength, const UBaseType_t uxItemSize, const uint8_t ucQueueType ) PRIVILEGED_FUNCTION;
+      |  ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1556:1: error: expected declaration specifiers before 'QueueSetHandle_t'
+ 1556 | QueueSetHandle_t xQueueCreateSet( const UBaseType_t uxEventQueueLength ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1580:1: error: unknown type name 'BaseType_t'
+ 1580 | BaseType_t xQueueAddToSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1580:28: error: expected declaration specifiers or '...' before 'QueueSetMemberHandle_t'
+ 1580 | BaseType_t xQueueAddToSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1580:70: error: expected declaration specifiers or '...' before 'QueueSetHandle_t'
+ 1580 | BaseType_t xQueueAddToSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      |                                                                      ^~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1599:1: error: unknown type name 'BaseType_t'
+ 1599 | BaseType_t xQueueRemoveFromSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1599:33: error: expected declaration specifiers or '...' before 'QueueSetMemberHandle_t'
+ 1599 | BaseType_t xQueueRemoveFromSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1599:75: error: expected declaration specifiers or '...' before 'QueueSetHandle_t'
+ 1599 | BaseType_t xQueueRemoveFromSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      |                                                                           ^~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1635:1: error: expected declaration specifiers before 'QueueSetMemberHandle_t'
+ 1635 | QueueSetMemberHandle_t xQueueSelectFromSet( QueueSetHandle_t xQueueSet, const TickType_t xTicksToWait ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1640:1: error: expected declaration specifiers before 'QueueSetMemberHandle_t'
+ 1640 | QueueSetMemberHandle_t xQueueSelectFromSetFromISR( QueueSetHandle_t xQueueSet ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~~~~~~~~~~~~
+p1/Supporting/queue.h:1643:38: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1643 | void vQueueWaitForMessageRestricted( QueueHandle_t xQueue, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely ) PRIVILEGED_FUNCTION;
+      |                                      ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1643:60: error: unknown type name 'TickType_t'
+ 1643 | void vQueueWaitForMessageRestricted( QueueHandle_t xQueue, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely ) PRIVILEGED_FUNCTION;
+      |                                                            ^~~~~~~~~~
+p1/Supporting/queue.h:1643:91: error: unknown type name 'BaseType_t'
+ 1643 | void vQueueWaitForMessageRestricted( QueueHandle_t xQueue, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely ) PRIVILEGED_FUNCTION;
+      |                                                                                           ^~~~~~~~~~
+p1/Supporting/queue.h:1644:1: error: unknown type name 'BaseType_t'
+ 1644 | BaseType_t xQueueGenericReset( QueueHandle_t xQueue, BaseType_t xNewQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~
+p1/Supporting/queue.h:1644:32: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1644 | BaseType_t xQueueGenericReset( QueueHandle_t xQueue, BaseType_t xNewQueue ) PRIVILEGED_FUNCTION;
+      |                                ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1644:54: error: unknown type name 'BaseType_t'
+ 1644 | BaseType_t xQueueGenericReset( QueueHandle_t xQueue, BaseType_t xNewQueue ) PRIVILEGED_FUNCTION;
+      |                                                      ^~~~~~~~~~
+p1/Supporting/queue.h:1645:28: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1645 | void vQueueSetQueueNumber( QueueHandle_t xQueue, UBaseType_t uxQueueNumber ) PRIVILEGED_FUNCTION;
+      |                            ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1645:50: error: unknown type name 'UBaseType_t'
+ 1645 | void vQueueSetQueueNumber( QueueHandle_t xQueue, UBaseType_t uxQueueNumber ) PRIVILEGED_FUNCTION;
+      |                                                  ^~~~~~~~~~~
+p1/Supporting/queue.h:1646:1: error: unknown type name 'UBaseType_t'
+ 1646 | UBaseType_t uxQueueGetQueueNumber( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      | ^~~~~~~~~~~
+p1/Supporting/queue.h:1646:36: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1646 | UBaseType_t uxQueueGetQueueNumber( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                                    ^~~~~~~~~~~~~
+p1/Supporting/queue.h:1647:30: error: expected declaration specifiers or '...' before 'QueueHandle_t'
+ 1647 | uint8_t ucQueueGetQueueType( QueueHandle_t xQueue ) PRIVILEGED_FUNCTION;
+      |                              ^~~~~~~~~~~~~
+In file included from p1/Supporting/uart.c:6:
+p1/Supporting/semphr.h:37:23: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'SemaphoreHandle_t'
+   37 | typedef QueueHandle_t SemaphoreHandle_t;
+      |                       ^~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/xuartns550.h:186,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xil_types.h:90:17: error: storage class specified for parameter 'u8'
+   90 | typedef uint8_t u8;
+      |                 ^~
+p1/Supporting/xil_types.h:91:18: error: storage class specified for parameter 'u16'
+   91 | typedef uint16_t u16;
+      |                  ^~~
+p1/Supporting/xil_types.h:92:18: error: storage class specified for parameter 'u32'
+   92 | typedef uint32_t u32;
+      |                  ^~~
+p1/Supporting/xil_types.h:97:2: error: expected specifier-qualifier-list before 'u32'
+   97 |  u32 Upper;
+      |  ^~~
+p1/Supporting/xil_types.h:99:3: error: storage class specified for parameter 'Xuint64'
+   99 | } Xuint64;
+      |   ^~~~~~~
+p1/Supporting/xil_types.h:130:14: error: storage class specified for parameter 'char8'
+  130 | typedef char char8;
+      |              ^~~~~
+p1/Supporting/xil_types.h:131:16: error: storage class specified for parameter 's8'
+  131 | typedef int8_t s8;
+      |                ^~
+p1/Supporting/xil_types.h:132:17: error: storage class specified for parameter 's16'
+  132 | typedef int16_t s16;
+      |                 ^~~
+p1/Supporting/xil_types.h:133:17: error: storage class specified for parameter 's32'
+  133 | typedef int32_t s32;
+      |                 ^~~
+p1/Supporting/xil_types.h:134:17: error: storage class specified for parameter 's64'
+  134 | typedef int64_t s64;
+      |                 ^~~
+p1/Supporting/xil_types.h:135:18: error: storage class specified for parameter 'u64'
+  135 | typedef uint64_t u64;
+      |                  ^~~
+p1/Supporting/xil_types.h:136:13: error: storage class specified for parameter 'sint32'
+  136 | typedef int sint32;
+      |             ^~~~~~
+p1/Supporting/xil_types.h:138:18: error: storage class specified for parameter 'INTPTR'
+  138 | typedef intptr_t INTPTR;
+      |                  ^~~~~~
+p1/Supporting/xil_types.h:139:19: error: storage class specified for parameter 'UINTPTR'
+  139 | typedef uintptr_t UINTPTR;
+      |                   ^~~~~~~
+p1/Supporting/xil_types.h:140:19: error: storage class specified for parameter 'PTRDIFF'
+  140 | typedef ptrdiff_t PTRDIFF;
+      |                   ^~~~~~~
+p1/Supporting/xil_types.h:143:14: error: storage class specified for parameter 'LONG'
+  143 | typedef long LONG;
+      |              ^~~~
+p1/Supporting/xil_types.h:144:23: error: storage class specified for parameter 'ULONG'
+  144 | typedef unsigned long ULONG;
+      |                       ^~~~~
+p1/Supporting/xil_types.h:159:16: error: storage class specified for parameter 'XInterruptHandler'
+  159 | typedef void (*XInterruptHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+p1/Supporting/xil_types.h:165:16: error: storage class specified for parameter 'XExceptionHandler'
+  165 | typedef void (*XExceptionHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/xuartns550.h:187,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xil_assert.h:72:12: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_AssertStatus'
+   72 | extern u32 Xil_AssertStatus;
+      |            ^~~~~~~~~~~~~~~~
+p1/Supporting/xil_assert.h:73:12: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_AssertWait'
+   73 | extern s32 Xil_AssertWait;
+      |            ^~~~~~~~~~~~~~
+p1/Supporting/xil_assert.h:74:30: warning: type defaults to 'int' in declaration of 'char8' [-Wimplicit-int]
+   74 | extern void Xil_Assert(const char8 *File, s32 Line);
+      |                              ^~~~~
+p1/Supporting/xil_assert.h:74:36: error: expected ';', ',' or ')' before '*' token
+   74 | extern void Xil_Assert(const char8 *File, s32 Line);
+      |                                    ^
+p1/Supporting/xil_assert.h:81:43: warning: type defaults to 'int' in declaration of 'char8' [-Wimplicit-int]
+   81 | typedef void (*Xil_AssertCallback) (const char8 *File, s32 Line);
+      |                                           ^~~~~
+p1/Supporting/xil_assert.h:81:49: error: expected ';', ',' or ')' before '*' token
+   81 | typedef void (*Xil_AssertCallback) (const char8 *File, s32 Line);
+      |                                                 ^
+p1/Supporting/xil_assert.h:189:28: error: unknown type name 'Xil_AssertCallback'
+  189 | void Xil_AssertSetCallback(Xil_AssertCallback Routine);
+      |                            ^~~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/xstatus.h:50,
+                 from p1/Supporting/xuartns550.h:188,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xbasic_types.h:103:21: error: storage class specified for parameter 'XAssertStatus'
+  103 | extern unsigned int XAssertStatus;
+      |                     ^~~~~~~~~~~~~
+p1/Supporting/xbasic_types.h:104:13: error: storage class specified for parameter 'XAssert'
+  104 | extern void XAssert(char *, int);
+      |             ^~~~~~~
+p1/Supporting/xbasic_types.h:112:23: error: storage class specified for parameter 'Xuint8'
+  112 | typedef unsigned char Xuint8;  /**< unsigned 8-bit */
+      |                       ^~~~~~
+p1/Supporting/xbasic_types.h:113:15: error: storage class specified for parameter 'Xint8'
+  113 | typedef char  Xint8;  /**< signed 8-bit */
+      |               ^~~~~
+p1/Supporting/xbasic_types.h:114:24: error: storage class specified for parameter 'Xuint16'
+  114 | typedef unsigned short Xuint16; /**< unsigned 16-bit */
+      |                        ^~~~~~~
+p1/Supporting/xbasic_types.h:115:16: error: storage class specified for parameter 'Xint16'
+  115 | typedef short  Xint16;  /**< signed 16-bit */
+      |                ^~~~~~
+p1/Supporting/xbasic_types.h:116:23: error: storage class specified for parameter 'Xuint32'
+  116 | typedef unsigned long Xuint32; /**< unsigned 32-bit */
+      |                       ^~~~~~~
+p1/Supporting/xbasic_types.h:117:15: error: storage class specified for parameter 'Xint32'
+  117 | typedef long  Xint32;  /**< signed 32-bit */
+      |               ^~~~~~
+p1/Supporting/xbasic_types.h:118:16: error: storage class specified for parameter 'Xfloat32'
+  118 | typedef float  Xfloat32; /**< 32-bit floating point */
+      |                ^~~~~~~~
+p1/Supporting/xbasic_types.h:119:17: error: storage class specified for parameter 'Xfloat64'
+  119 | typedef double  Xfloat64; /**< 64-bit double precision FP */
+      |                 ^~~~~~~~
+p1/Supporting/xbasic_types.h:120:23: error: storage class specified for parameter 'Xboolean'
+  120 | typedef unsigned long Xboolean; /**< boolean (XTRUE or XFALSE) */
+      |                       ^~~~~~~~
+p1/Supporting/xbasic_types.h:150:16: error: storage class specified for parameter 'XInterruptHandler'
+  150 | typedef void (*XInterruptHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+p1/Supporting/xbasic_types.h:150:16: error: redefinition of parameter 'XInterruptHandler'
+In file included from p1/Supporting/xuartns550.h:186,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xil_types.h:159:16: note: previous definition of 'XInterruptHandler' was here
+  159 | typedef void (*XInterruptHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/xstatus.h:50,
+                 from p1/Supporting/xuartns550.h:188,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xbasic_types.h:156:16: error: storage class specified for parameter 'XExceptionHandler'
+  156 | typedef void (*XExceptionHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+p1/Supporting/xbasic_types.h:156:16: error: redefinition of parameter 'XExceptionHandler'
+In file included from p1/Supporting/xuartns550.h:186,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xil_types.h:165:16: note: previous definition of 'XExceptionHandler' was here
+  165 | typedef void (*XExceptionHandler) (void *InstancePtr);
+      |                ^~~~~~~~~~~~~~~~~
+In file included from p1/Supporting/xstatus.h:50,
+                 from p1/Supporting/xuartns550.h:188,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xbasic_types.h:162:16: error: storage class specified for parameter 'XAssertCallback'
+  162 | typedef void (*XAssertCallback) (char *FilenamePtr, int LineNumber);
+      |                ^~~~~~~~~~~~~~~
+p1/Supporting/xbasic_types.h:301:25: error: expected declaration specifiers or '...' before 'XAssertCallback'
+  301 | void XAssertSetCallback(XAssertCallback Routine);
+      |                         ^~~~~~~~~~~~~~~
+In file included from p1/Supporting/xuartns550.h:188,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xstatus.h:416:13: error: storage class specified for parameter 'XStatus'
+  416 | typedef int XStatus;
+      |             ^~~~~~~
+In file included from p1/Supporting/xuartns550_l.h:69,
+                 from p1/Supporting/xuartns550.h:189,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xil_io.h:63:1: error: expected declaration specifiers before 'u16'
+   63 | u16 Xil_EndianSwap16(u16 Data);
+      | ^~~
+p1/Supporting/xil_io.h:64:1: error: expected declaration specifiers before 'u32'
+   64 | u32 Xil_EndianSwap32(u32 Data);
+      | ^~~
+p1/Supporting/xil_io.h:107:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In8'
+  107 | static INLINE u8 Xil_In8(UINTPTR Addr)
+      |                  ^~~~~~~
+p1/Supporting/xil_io.h:124:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In16'
+  124 | static INLINE u16 Xil_In16(UINTPTR Addr)
+      |                   ^~~~~~~~
+p1/Supporting/xil_io.h:141:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In32'
+  141 | static INLINE u32 Xil_In32(UINTPTR Addr)
+      |                   ^~~~~~~~
+p1/Supporting/xil_io.h:158:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In64'
+  158 | static INLINE u64 Xil_In64(UINTPTR Addr)
+      |                   ^~~~~~~~
+p1/Supporting/xil_io.h:176:29: error: expected declaration specifiers or '...' before 'UINTPTR'
+  176 | static INLINE void Xil_Out8(UINTPTR Addr, u8 Value)
+      |                             ^~~~~~~
+p1/Supporting/xil_io.h:176:43: error: expected declaration specifiers or '...' before 'u8'
+  176 | static INLINE void Xil_Out8(UINTPTR Addr, u8 Value)
+      |                                           ^~
+p1/Supporting/xil_io.h:194:30: error: expected declaration specifiers or '...' before 'UINTPTR'
+  194 | static INLINE void Xil_Out16(UINTPTR Addr, u16 Value)
+      |                              ^~~~~~~
+p1/Supporting/xil_io.h:194:44: error: expected declaration specifiers or '...' before 'u16'
+  194 | static INLINE void Xil_Out16(UINTPTR Addr, u16 Value)
+      |                                            ^~~
+p1/Supporting/xil_io.h:213:30: error: expected declaration specifiers or '...' before 'UINTPTR'
+  213 | static INLINE void Xil_Out32(UINTPTR Addr, u32 Value)
+      |                              ^~~~~~~
+p1/Supporting/xil_io.h:213:44: error: expected declaration specifiers or '...' before 'u32'
+  213 | static INLINE void Xil_Out32(UINTPTR Addr, u32 Value)
+      |                                            ^~~
+p1/Supporting/xil_io.h:235:30: error: expected declaration specifiers or '...' before 'UINTPTR'
+  235 | static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+      |                              ^~~~~~~
+p1/Supporting/xil_io.h:235:44: error: expected declaration specifiers or '...' before 'u64'
+  235 | static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+      |                                            ^~~
+p1/Supporting/xil_io.h:279:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In16BE'
+  279 | static INLINE u16 Xil_In16BE(UINTPTR Addr)
+      |                   ^~~~~~~~~~
+p1/Supporting/xil_io.h:293:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'Xil_In32BE'
+  293 | static INLINE u32 Xil_In32BE(UINTPTR Addr)
+      |                   ^~~~~~~~~~
+p1/Supporting/xil_io.h:307:32: error: expected declaration specifiers or '...' before 'UINTPTR'
+  307 | static INLINE void Xil_Out16BE(UINTPTR Addr, u16 Value)
+      |                                ^~~~~~~
+p1/Supporting/xil_io.h:307:46: error: expected declaration specifiers or '...' before 'u16'
+  307 | static INLINE void Xil_Out16BE(UINTPTR Addr, u16 Value)
+      |                                              ^~~
+p1/Supporting/xil_io.h:321:32: error: expected declaration specifiers or '...' before 'UINTPTR'
+  321 | static INLINE void Xil_Out32BE(UINTPTR Addr, u32 Value)
+      |                                ^~~~~~~
+p1/Supporting/xil_io.h:321:46: error: expected declaration specifiers or '...' before 'u32'
+  321 | static INLINE void Xil_Out32BE(UINTPTR Addr, u32 Value)
+      |                                              ^~~
+In file included from p1/Supporting/xuartns550.h:189,
+                 from p1/Supporting/uart.c:9:
+p1/Supporting/xuartns550_l.h:334:26: error: expected declaration specifiers or '...' before 'UINTPTR'
+  334 | void XUartNs550_SendByte(UINTPTR BaseAddress, u8 Data);
+      |                          ^~~~~~~
+p1/Supporting/xuartns550_l.h:334:47: error: expected declaration specifiers or '...' before 'u8'
+  334 | void XUartNs550_SendByte(UINTPTR BaseAddress, u8 Data);
+      |                                               ^~
+p1/Supporting/xuartns550_l.h:336:1: error: expected declaration specifiers before 'u8'
+  336 | u8 XUartNs550_RecvByte(UINTPTR BaseAddress);
+      | ^~
+p1/Supporting/xuartns550_l.h:338:25: error: expected declaration specifiers or '...' before 'UINTPTR'
+  338 | void XUartNs550_SetBaud(UINTPTR BaseAddress, u32 InputClockHz, u32 BaudRate);
+      |                         ^~~~~~~
+p1/Supporting/xuartns550_l.h:338:46: error: expected declaration specifiers or '...' before 'u32'
+  338 | void XUartNs550_SetBaud(UINTPTR BaseAddress, u32 InputClockHz, u32 BaudRate);
+      |                                              ^~~
+p1/Supporting/xuartns550_l.h:338:64: error: expected declaration specifiers or '...' before 'u32'
+  338 | void XUartNs550_SetBaud(UINTPTR BaseAddress, u32 InputClockHz, u32 BaudRate);
+      |                                                                ^~~
+In file included from p1/Supporting/uart.c:9:
+p1/Supporting/xuartns550.h:316:2: error: expected specifier-qualifier-list before 'u16'
+  316 |  u16 DeviceId;  /**< Unique ID  of device */
+      |  ^~~
+p1/Supporting/xuartns550.h:320:3: error: storage class specified for parameter 'XUartNs550_Config'
+  320 | } XUartNs550_Config;
+      |   ^~~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:327:2: error: expected specifier-qualifier-list before 'u8'
+  327 |  u8 *NextBytePtr;
+      |  ^~
+p1/Supporting/xuartns550.h:330:3: error: storage class specified for parameter 'XUartNs550Buffer'
+  330 | } XUartNs550Buffer;
+      |   ^~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:337:2: error: expected specifier-qualifier-list before 'u32'
+  337 |  u32 BaudRate; /**< In bps, ie 1200 */
+      |  ^~~
+p1/Supporting/xuartns550.h:341:3: error: storage class specified for parameter 'XUartNs550Format'
+  341 | } XUartNs550Format;
+      |   ^~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:359:55: error: expected declaration specifiers or '...' before 'u32'
+  359 | typedef void (*XUartNs550_Handler)(void *CallBackRef, u32 Event,
+      |                                                       ^~~
+p1/Supporting/xuartns550.h:366:2: error: expected specifier-qualifier-list before 'u16'
+  366 |  u16 TransmitInterrupts;  /**< Number of transmit interrupts */
+      |  ^~~
+p1/Supporting/xuartns550.h:376:3: error: storage class specified for parameter 'XUartNs550Stats'
+  376 | } XUartNs550Stats;
+      |   ^~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:385:2: error: expected specifier-qualifier-list before 'XUartNs550Stats'
+  385 |  XUartNs550Stats Stats; /**< Statistics */
+      |  ^~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:397:3: error: storage class specified for parameter 'XUartNs550'
+  397 | } XUartNs550;
+      |   ^~~~~~~~~~
+p1/Supporting/xuartns550.h:406:27: error: expected declaration specifiers or '...' before 'XUartNs550'
+  406 | int XUartNs550_Initialize(XUartNs550 *InstancePtr, u16 DeviceId);
+      |                           ^~~~~~~~~~
+p1/Supporting/xuartns550.h:406:52: error: expected declaration specifiers or '...' before 'u16'
+  406 | int XUartNs550_Initialize(XUartNs550 *InstancePtr, u16 DeviceId);
+      |                                                    ^~~
+p1/Supporting/xuartns550.h:407:1: error: expected declaration specifiers before 'XUartNs550_Config'
+  407 | XUartNs550_Config *XUartNs550_LookupConfig(u16 DeviceId);
+      | ^~~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:412:30: error: expected declaration specifiers or '...' before 'XUartNs550'
+  412 | int XUartNs550_CfgInitialize(XUartNs550 *InstancePtr,
+      |                              ^~~~~~~~~~
+p1/Supporting/xuartns550.h:413:5: error: expected declaration specifiers or '...' before 'XUartNs550_Config'
+  413 |     XUartNs550_Config *Config,
+      |     ^~~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:414:6: error: expected declaration specifiers or '...' before 'UINTPTR'
+  414 |      UINTPTR EffectiveAddr);
+      |      ^~~~~~~
+p1/Supporting/xuartns550.h:415:30: error: expected declaration specifiers or '...' before 'XUartNs550'
+  415 | unsigned int XUartNs550_Send(XUartNs550 *InstancePtr, u8 *BufferPtr,
+      |                              ^~~~~~~~~~
+p1/Supporting/xuartns550.h:415:55: error: expected declaration specifiers or '...' before 'u8'
+  415 | unsigned int XUartNs550_Send(XUartNs550 *InstancePtr, u8 *BufferPtr,
+      |                                                       ^~
+p1/Supporting/xuartns550.h:417:30: error: expected declaration specifiers or '...' before 'XUartNs550'
+  417 | unsigned int XUartNs550_Recv(XUartNs550 *InstancePtr, u8 *BufferPtr,
+      |                              ^~~~~~~~~~
+p1/Supporting/xuartns550.h:417:55: error: expected declaration specifiers or '...' before 'u8'
+  417 | unsigned int XUartNs550_Recv(XUartNs550 *InstancePtr, u8 *BufferPtr,
+      |                                                       ^~
+p1/Supporting/xuartns550.h:423:27: error: expected declaration specifiers or '...' before 'XUartNs550'
+  423 | int XUartNs550_SetOptions(XUartNs550 *InstancePtr, u16 Options);
+      |                           ^~~~~~~~~~
+p1/Supporting/xuartns550.h:423:52: error: expected declaration specifiers or '...' before 'u16'
+  423 | int XUartNs550_SetOptions(XUartNs550 *InstancePtr, u16 Options);
+      |                                                    ^~~
+p1/Supporting/xuartns550.h:424:1: error: expected declaration specifiers before 'u16'
+  424 | u16 XUartNs550_GetOptions(XUartNs550 *InstancePtr);
+      | ^~~
+p1/Supporting/xuartns550.h:426:33: error: expected declaration specifiers or '...' before 'XUartNs550'
+  426 | int XUartNs550_SetFifoThreshold(XUartNs550 *InstancePtr,
+      |                                 ^~~~~~~~~~
+p1/Supporting/xuartns550.h:427:6: error: expected declaration specifiers or '...' before 'u8'
+  427 |      u8 TriggerLevel);
+      |      ^~
+p1/Supporting/xuartns550.h:428:1: error: expected declaration specifiers before 'u8'
+  428 | u8 XUartNs550_GetFifoThreshold(XUartNs550 *InstancePtr);
+      | ^~
+p1/Supporting/xuartns550.h:430:26: error: expected declaration specifiers or '...' before 'XUartNs550'
+  430 | int XUartNs550_IsSending(XUartNs550 *InstancePtr);
+      |                          ^~~~~~~~~~
+p1/Supporting/xuartns550.h:432:1: error: expected declaration specifiers before 'u8'
+  432 | u8 XUartNs550_GetLastErrors(XUartNs550 *InstancePtr);
+      | ^~
+p1/Supporting/xuartns550.h:434:1: error: expected declaration specifiers before 'u8'
+  434 | u8 XUartNs550_GetModemStatus(XUartNs550 *InstancePtr);
+      | ^~
+p1/Supporting/xuartns550.h:439:30: error: expected declaration specifiers or '...' before 'XUartNs550'
+  439 | int XUartNs550_SetDataFormat(XUartNs550 *InstancePtr,
+      |                              ^~~~~~~~~~
+p1/Supporting/xuartns550.h:440:6: error: expected declaration specifiers or '...' before 'XUartNs550Format'
+  440 |      XUartNs550Format *Format);
+      |      ^~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:441:31: error: expected declaration specifiers or '...' before 'XUartNs550'
+  441 | void XUartNs550_GetDataFormat(XUartNs550 *InstancePtr,
+      |                               ^~~~~~~~~~
+p1/Supporting/xuartns550.h:442:5: error: expected declaration specifiers or '...' before 'XUartNs550Format'
+  442 |     XUartNs550Format *Format);
+      |     ^~~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:446:28: error: expected declaration specifiers or '...' before 'XUartNs550'
+  446 | void XUartNs550_SetHandler(XUartNs550 *InstancePtr, XUartNs550_Handler FuncPtr,
+      |                            ^~~~~~~~~~
+p1/Supporting/xuartns550.h:446:53: error: unknown type name 'XUartNs550_Handler'; did you mean 'XUartNs550_ReadReg'?
+  446 | void XUartNs550_SetHandler(XUartNs550 *InstancePtr, XUartNs550_Handler FuncPtr,
+      |                                                     ^~~~~~~~~~~~~~~~~~
+      |                                                     XUartNs550_ReadReg
+p1/Supporting/xuartns550.h:449:34: error: expected declaration specifiers or '...' before 'XUartNs550'
+  449 | void XUartNs550_InterruptHandler(XUartNs550 *InstancePtr);
+      |                                  ^~~~~~~~~~
+p1/Supporting/xuartns550.h:454:26: error: expected declaration specifiers or '...' before 'XUartNs550'
+  454 | void XUartNs550_GetStats(XUartNs550 *InstancePtr, XUartNs550Stats *StatsPtr);
+      |                          ^~~~~~~~~~
+p1/Supporting/xuartns550.h:454:51: error: expected declaration specifiers or '...' before 'XUartNs550Stats'
+  454 | void XUartNs550_GetStats(XUartNs550 *InstancePtr, XUartNs550Stats *StatsPtr);
+      |                                                   ^~~~~~~~~~~~~~~
+p1/Supporting/xuartns550.h:455:28: error: expected declaration specifiers or '...' before 'XUartNs550'
+  455 | void XUartNs550_ClearStats(XUartNs550 *InstancePtr);
+      |                            ^~~~~~~~~~
+p1/Supporting/xuartns550.h:460:25: error: expected declaration specifiers or '...' before 'XUartNs550'
+  460 | int XUartNs550_SelfTest(XUartNs550 *InstancePtr);
+      |                         ^~~~~~~~~~
+p1/Supporting/uart.c:26:5: error: expected specifier-qualifier-list before 'XUartNs550'
+   26 |     XUartNs550 Device; /* Xilinx Uart driver */
+      |     ^~~~~~~~~~
+p1/Supporting/uart.c:24:1: warning: empty declaration
+   24 | struct UartDriver
+      | ^~~~~~
+p1/Supporting/uart.c:43:13: error: storage class specified for parameter 'uart_rxready'
+   43 | static bool uart_rxready(struct UartDriver *Uart);
+      |             ^~~~~~~~~~~~
+p1/Supporting/uart.c:44:16: error: storage class specified for parameter 'uart_rxchar'
+   44 | static uint8_t uart_rxchar(struct UartDriver *Uart);
+      |                ^~~~~~~~~~~
+p1/Supporting/uart.c:45:16: error: storage class specified for parameter 'uart_txchar'
+   45 | static uint8_t uart_txchar(struct UartDriver *Uart, uint8_t c);
+      |                ^~~~~~~~~~~
+p1/Supporting/uart.c:46:12: error: storage class specified for parameter 'uart_rxbuffer'
+   46 | static int uart_rxbuffer(struct UartDriver *Uart, uint8_t *ptr, int len);
+      |            ^~~~~~~~~~~~~
+p1/Supporting/uart.c:47:12: error: storage class specified for parameter 'uart_txbuffer'
+   47 | static int uart_txbuffer(struct UartDriver *Uart, uint8_t *ptr, int len);
+      |            ^~~~~~~~~~~~~
+p1/Supporting/uart.c:48:13: error: storage class specified for parameter 'uart_init'
+   48 | static void uart_init(struct UartDriver *Uart, uint8_t device_id, uint8_t plic_source_id);
+      |             ^~~~~~~~~
+p1/Supporting/uart.c:59:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'UartNs550_0'
+   59 | static XUartNs550 UartNs550_0;
+      |                   ^~~~~~~~~~~
+p1/Supporting/uart.c:64:19: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'UartNs550_1'
+   64 | static XUartNs550 UartNs550_1;
+      |                   ^~~~~~~~~~~
+p1/Supporting/uart.c:75:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   75 | {
+      | ^
+p1/Supporting/uart.c:83:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   83 | {
+      | ^
+p1/Supporting/uart.c:91:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   91 | {
+      | ^
+p1/Supporting/uart.c:101:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  101 | {
+      | ^
+p1/Supporting/uart.c:109:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  109 | {
+      | ^
+p1/Supporting/uart.c:114:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  114 | {
+      | ^
+p1/Supporting/uart.c:124:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  124 | {
+      | ^
+p1/Supporting/uart.c:132:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  132 | {
+      | ^
+p1/Supporting/uart.c:140:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  140 | {
+      | ^
+p1/Supporting/uart.c:150:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  150 | {
+      | ^
+p1/Supporting/uart.c:158:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  158 | {
+      | ^
+p1/Supporting/uart.c:166:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  166 | {
+      | ^
+p1/Supporting/uart.c:175:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  175 | {
+      | ^
+p1/Supporting/uart.c:183:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  183 | {
+      | ^
+p1/Supporting/uart.c:238:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  238 | {
+      | ^
+p1/Supporting/uart.c:253:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  253 | {
+      | ^
+p1/Supporting/uart.c:267:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  267 | {
+      | ^
+p1/Supporting/uart.c:313:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  313 | {
+      | ^
+In file included from p1/Supporting/task.h:36,
+                 from p1/Supporting/bsp.h:218,
+                 from p1/Supporting/uart.h:4,
+                 from p1/Supporting/uart.c:3:
+p1/Supporting/list.h:345:6: error: old-style parameter declarations in prototyped function definition
+  345 | void vListInitialise( List_t * const pxList ) PRIVILEGED_FUNCTION;
+      |      ^~~~~~~~~~~~~~~
+p1/Supporting/uart.c:405: error: expected '{' at end of input
+  405 | #endif /* !XPAR_UART_USE_POLLING_MODE */
+      | 
+make[2]: *** [Makefile:86: compile] Error 1
+make[1]: *** [Makefile:94: coremark.elf] Error 2
+make: *** [Makefile:99: rerun] Error 2
