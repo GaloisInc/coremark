@@ -91,6 +91,7 @@ typedef int32_t ee_s32;
 typedef double ee_f32;
 typedef uint8_t ee_u8;
 typedef uint32_t ee_u32;
+typedef uint64_t ee_u64;
 typedef ee_u32 ee_ptr_int;
 typedef uint32_t ee_size_t;
 #define NULL ((void *)0)
@@ -102,8 +103,8 @@ typedef uint32_t ee_size_t;
 /* Configuration : CORE_TICKS
 	Define type of return from the timing functions.
  */
-#define CORETIMETYPE ee_u32 
-typedef ee_u32 CORE_TICKS;
+#define CORETIMETYPE ee_u64
+typedef ee_u64 CORE_TICKS;
 
 /* Configuration : SEED_METHOD
 	Defines method to get seed values that cannot be computed at compile time.

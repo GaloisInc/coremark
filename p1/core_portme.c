@@ -111,7 +111,7 @@ CORE_TICKS get_time(void) {
 	Default implementation implemented by the EE_TICKS_PER_SEC macro above.
 */
 secs_ret time_in_secs(CORE_TICKS ticks) {
-	secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
+	secs_ret retval=(secs_ret) (ticks / EE_TICKS_PER_SEC);
 	return retval;
 }
 
@@ -148,6 +148,9 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 void portable_fini(core_portable *p)
 {
 	p->portable_id=0;
+
+	ee_printf("finished\r\n");
+	configASSERT(0);
 }
 
 void uart_send_char(char c) {
