@@ -72,7 +72,7 @@
 
 OUTPUT_ARCH( "riscv" )
 
-_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 4K;
+_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 256K;
 _HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 256K;
 
 /*****************************************************************************

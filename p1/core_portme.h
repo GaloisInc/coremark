@@ -81,17 +81,18 @@ Original Author: Shay Gal-on
 	ee_ptr_int needs to be the data type used to hold pointers, otherwise coremark may fail!!!
 */
 #include <stddef.h>
+#include <stdint.h>
 
-typedef unsigned long long int ee_u64;
+typedef uint64_t ee_u64;
 
-typedef signed short ee_s16;
-typedef unsigned short ee_u16;
-typedef signed int ee_s32;
+typedef int16_t ee_s16;
+typedef uint16_t ee_u16;
+typedef int32_t ee_s32;
 typedef double ee_f32;
-typedef unsigned char ee_u8;
-typedef unsigned int ee_u32;
+typedef uint8_t ee_u8;
+typedef uint32_t ee_u32;
 typedef ee_u32 ee_ptr_int;
-typedef size_t ee_size_t;
+typedef uint32_t ee_size_t;
 #define NULL ((void *)0)
 /* align_mem :
 	This macro is used to align an offset to point to a 32b value. It is used in the Matrix algorithm to initialize the input memory blocks.
@@ -144,7 +145,7 @@ typedef ee_u32 CORE_TICKS;
 	to fit a particular architecture. 
 */
 #ifndef MULTITHREAD
-#define MULTITHREAD 0
+#define MULTITHREAD 1
 #define USE_PTHREAD 0
 #define USE_FORK 0
 #define USE_SOCKET 0

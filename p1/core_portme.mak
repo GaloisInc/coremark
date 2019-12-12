@@ -44,7 +44,7 @@ INCLUDES = \
 			-I$(PORT_DIR) \
 			-I$(PORT_DIR)/Supporting
 
-CFLAGS = $(PORT_CFLAGS) $(INCLUDES) -DFLAGS_STR=\"$(FLAGS_STR)\"  -nostdlib  -T p1/link.ld   -nostartfiles
+CFLAGS = $(PORT_CFLAGS) $(INCLUDES) -DFLAGS_STR=\"$(FLAGS_STR)\"  -nostdlib  -T p1/link.ld   -nostartfiles -Wall
 #Flag : LFLAGS_END
 #	Define any libraries needed for linking or other flags that should come at the end of the link line (e.g. linker scripts). 
 #	Note : On certain platforms, the default clock_gettime implementation is supported but requires linking of librt.

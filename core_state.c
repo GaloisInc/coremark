@@ -50,7 +50,7 @@ ee_u16 core_bench_state(ee_u32 blksize, ee_u8 *memblock,
 
 
 #if CORE_DEBUG
-	ee_printf("State Bench: %d,%d,%d,%04x\n",seed1,seed2,step,crc);
+	ee_printf("State Bench: %u,%u,%u,%04x\r\n",seed1,seed2,step,crc);
 #endif
 	for (i=0; i<NUM_CORE_STATES; i++) {
 		final_counts[i]=track_counts[i]=0;
@@ -161,7 +161,7 @@ void core_init_state(ee_u32 size, ee_s16 seed, ee_u8 *p) {
 		total++;
 	}
 #if CORE_DEBUG
-	ee_printf("State Input: %s\n",start);
+	ee_printf("State\r\n");
 #endif
 }
 
