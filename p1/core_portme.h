@@ -198,6 +198,32 @@ void portable_fini(core_portable *p);
 #endif
 #endif
 
+#define CPU_CLOCK_HZ ((ee_u32)(50000000))
+
+#define XPAR_UARTNS550_0_DEVICE_ID 0
+#define XPAR_UART_USE_POLLING_MODE 1
+#define XPAR_XUARTNS550_NUM_INSTANCES 1
+#define XPAR_DEFAULT_BAUD_RATE 115200
+
+#define BSP_USE_UART0 1
+#define XPAR_UARTNS550_0_DEVICE_ID 0
+#define XPAR_UARTNS550_0_BAUD_RATE XPAR_DEFAULT_BAUD_RATE
+#define XPAR_UARTNS550_0_BASEADDR 0x62300000ULL
+#define XPAR_UARTNS550_0_CLOCK_HZ CPU_CLOCK_HZ
+
+
 int ee_printf(const char *fmt, ...);
+
+void uart_send_char(char c);
+
+/* Normal assert() semantics without relying on the provision of an assert.h
+header file. */
+#define configASSERT(x)           \
+    if ((x) == 0)                 \
+    {                             \
+        __asm volatile("ebreak"); \
+        for (;;)                  \
+            ;                     \
+    }
 
 #endif /* CORE_PORTME_H */

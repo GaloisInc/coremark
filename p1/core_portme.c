@@ -18,8 +18,6 @@ Original Author: Shay Gal-on
 #include "coremark.h"
 #include "core_portme.h"
 
-#define CPU_CLOCK_HZ ((ee_u32)(50000000))
-
 #if VALIDATION_RUN
 	volatile ee_s32 seed1_volatile=0x3415;
 	volatile ee_s32 seed2_volatile=0x3415;
@@ -56,7 +54,7 @@ CORETIMETYPE barebones_clock() {
 		: // No inputs.
 		: "t1");
 	
-	return (((((ee_u64)cycle_hi) << 32) | (ee_u64)cycle_lo) / CPU_CLOCK_HZ);
+	return ((((ee_u64)cycle_hi) << 32) | (ee_u64)cycle_lo);
 
 }
 /* Define : TIMER_RES_DIVIDER
@@ -67,8 +65,9 @@ CORETIMETYPE barebones_clock() {
 	*/
 #define GETMYTIME(_t) (*_t=barebones_clock())
 #define MYTIMEDIFF(fin,ini) ((fin)-(ini))
-#define TIMER_RES_DIVIDER 1
 #define SAMPLE_TIME_IMPLEMENTATION 1
+#define CLOCKS_PER_SEC CPU_CLOCK_HZ
+#define TIMER_RES_DIVIDER 1
 #define EE_TICKS_PER_SEC (CLOCKS_PER_SEC / TIMER_RES_DIVIDER)
 
 /** Define Host specific (POSIX), or target specific global time variables. */
@@ -122,9 +121,17 @@ ee_u32 default_num_contexts=1;
 	Target specific initialization code 
 	Test for some common mistakes.
 */
+#include "xuartns550.h"
+static XUartNs550 UartNs550_0;
+
 void portable_init(core_portable *p, int *argc, char *argv[])
 {
-	//#error "Call board initialization routines in portable init (if needed), in particular initialize UART!\n"
+	/* Initialize the UartNs550 driver so that it's ready to use */
+    configASSERT(XUartNs550_Initialize(&UartNs550_0, XPAR_UARTNS550_0_DEVICE_ID) == XST_SUCCESS);
+
+    /* Perform a self-test to ensure that the hardware was built correctly */
+    configASSERT(XUartNs550_SelfTest(&UartNs550_0) == XST_SUCCESS);
+
 	if (sizeof(ee_ptr_int) != sizeof(ee_u8 *)) {
 		ee_printf("ERROR! Please define ee_ptr_int to a type that holds a pointer!\n");
 	}
@@ -141,4 +148,6 @@ void portable_fini(core_portable *p)
 	p->portable_id=0;
 }
 
-
+void uart_send_char(char c) {
+  XUartNs550_SendByte(UartNs550_0.BaseAddress, c);
+}

@@ -45,6 +45,7 @@ endif
 vpath %.c $(PORT_DIR)
 vpath %.h $(PORT_DIR)
 vpath %.mak $(PORT_DIR)
+
 include $(PORT_DIR)/core_portme.mak
 
 ifndef ITERATIONS
@@ -73,11 +74,13 @@ $(OPATH):
 
 .PHONY: compile link
 ifdef SEPARATE_COMPILE
+$(info PORT_OBJS=$(PORT_OBJS))
 $(OPATH)$(PORT_DIR):
 	$(MKDIR) $(OPATH)$(PORT_DIR)
 
 compile: $(OPATH) $(OPATH)$(PORT_DIR) $(OBJS) $(HEADERS) 
 link: compile 
+	@echo $(OBJS)
 	$(LD) $(LFLAGS) $(XLFLAGS) $(OBJS) $(LOUTCMD)
 	
 else

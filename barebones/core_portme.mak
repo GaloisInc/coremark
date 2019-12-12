@@ -19,15 +19,18 @@
 # Flag : OUTFLAG
 #	Use this flag to define how to to get an executable (e.g -o)
 OUTFLAG= -o
+
+TARGET=riscv64-unknown-elf
+
 # Flag : CC
 #	Use this flag to define compiler to use
-CC 		= gcc
+CC 		= $(TARGET)-gcc
 # Flag : LD
 #	Use this flag to define compiler to use
-LD		= gld
+LD		= $(TARGET)-gcc
 # Flag : AS
 #	Use this flag to define compiler to use
-AS		= gas
+AS		= $(TARGET)-as
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
 PORT_CFLAGS = -O0 -g

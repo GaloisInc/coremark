@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-#include "uart.h"
 #include <coremark.h>
 #include <stdarg.h>
+#include "core_portme.h"
 
 #define ZEROPAD  	(1<<0)	/* Pad with zero */
 #define SIGN    	(1<<1)	/* Unsigned/signed long */
@@ -561,26 +561,6 @@ repeat:
   return str - buf;
 }
 
-void uart_send_char(char c) {
-//#error "You must implement the method uart_send_char to use this file!\n";
-/*	Output of a char to a UART usually follows the following model:
-	Wait until UART is ready
-	Write char to UART
-	Wait until UART is done
-	
-	Or in code:
-	while (*UART_CONTROL_ADDRESS != UART_READY);
-	*UART_DATA_ADDRESS = c;
-	while (*UART_CONTROL_ADDRESS != UART_READY);
-	
-	Check the UART sample code on your platform or the board documentation.
-*/
-
-  //use the uart wrapper for the xuartns550 driver...
-  uart0_txchar(c);
-
-}
-
 int ee_printf(const char *fmt, ...)
 {
   char buf[256],*p;
@@ -592,9 +572,9 @@ int ee_printf(const char *fmt, ...)
   va_end(args);
   p=buf;
   while (*p) {
-	uart_send_char(*p);
-	n++;
-	p++;
+    uart_send_char(*p);
+    n++;
+    p++;
   }
 
   return n;

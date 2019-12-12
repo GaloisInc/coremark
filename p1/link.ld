@@ -79,7 +79,6 @@ _HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 256K;
  * Define memory layout
  ****************************************************************************/
 MEMORY {
-   cmem : ORIGIN = 0x80000000, LENGTH = 0x00800000
 	imem : ORIGIN = 0xc0000000, LENGTH = 0x00080000
 	dmem : ORIGIN = 0xc0080000, LENGTH = 0x00800000
 }
@@ -92,11 +91,6 @@ ENTRY(boot)
  * Define the sections, and where they are mapped in memory 
  ****************************************************************************/
 SECTIONS {
-   .uncached : {
-      . = ALIGN(64);
-      *(.uncached);
-		*(.uncached.*);
-   } > cmem
 	.text : {
       . = ALIGN(8);
 	    *boot.o(.text);
