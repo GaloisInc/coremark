@@ -52,7 +52,7 @@ SEPARATE_COMPILE=1
 # Flag : SEPARATE_COMPILE
 # You must also define below how to create an object file, and how to link.
 OBJOUT 	= -o
-LFLAGS 	= -T p1/link.ld -nostartfiles -nostdlib $(ARCH) $(ABI)
+LFLAGS 	= -T p1/link.ld -nostartfiles -nostdlib $(ARCH) $(ABI)  -lc -lgcc
 ASFLAGS = -g $(ARCH) $(ABI)
 OFLAG 	= -o
 COUT 	= -c

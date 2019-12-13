@@ -104,7 +104,7 @@ typedef uint32_t ee_size_t;
 	Define type of return from the timing functions.
  */
 #define CORETIMETYPE ee_u64
-typedef ee_u64 CORE_TICKS;
+typedef ee_u32 CORE_TICKS;
 
 /* Configuration : SEED_METHOD
 	Defines method to get seed values that cannot be computed at compile time.
@@ -174,7 +174,7 @@ typedef ee_u64 CORE_TICKS;
 	1 - platform does not support returning a value from main
 */
 #ifndef MAIN_HAS_NORETURN
-#define MAIN_HAS_NORETURN 1
+#define MAIN_HAS_NORETURN 0
 #endif
 
 /* Variable : default_num_contexts
