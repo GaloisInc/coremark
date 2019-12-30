@@ -41,8 +41,21 @@ Original Author: Shay Gal-on
 	Sample implementation for standard time.h and windows.h definitions included.
 */
 CORETIMETYPE barebones_clock() {
-	//#error "You must implement a method to measure time in barebones_clock()! This function should return current time.\n"
-	return 1;
+	
+	//return ticks since start / processing speed
+	ee_u32 cycle_lo, cycle_hi;
+	asm volatile(
+		"%=:\n\t"
+		"csrr %1, mcycleh\n\t"
+		"csrr %0, mcycle\n\t"
+		"csrr t1, mcycleh\n\t"
+		"bne  %1, t1, %=b"
+		: "=r"(cycle_lo), "=r"(cycle_hi)
+		: // No inputs.
+		: "t1");
+	
+	return ((((ee_u64)cycle_hi) << 32) | (ee_u64)cycle_lo);
+
 }
 /* Define : TIMER_RES_DIVIDER
 	Divider to trade off timer resolution and total time that can be measured.
@@ -52,8 +65,9 @@ CORETIMETYPE barebones_clock() {
 	*/
 #define GETMYTIME(_t) (*_t=barebones_clock())
 #define MYTIMEDIFF(fin,ini) ((fin)-(ini))
-#define TIMER_RES_DIVIDER 1
 #define SAMPLE_TIME_IMPLEMENTATION 1
+#define CLOCKS_PER_SEC CPU_CLOCK_HZ
+#define TIMER_RES_DIVIDER 1
 #define EE_TICKS_PER_SEC (CLOCKS_PER_SEC / TIMER_RES_DIVIDER)
 
 /** Define Host specific (POSIX), or target specific global time variables. */
@@ -97,7 +111,7 @@ CORE_TICKS get_time(void) {
 	Default implementation implemented by the EE_TICKS_PER_SEC macro above.
 */
 secs_ret time_in_secs(CORE_TICKS ticks) {
-	secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
+	secs_ret retval=(secs_ret) (ticks / EE_TICKS_PER_SEC);
 	return retval;
 }
 
@@ -107,9 +121,17 @@ ee_u32 default_num_contexts=1;
 	Target specific initialization code 
 	Test for some common mistakes.
 */
+#include "xuartns550.h"
+static XUartNs550 UartNs550_0;
+
 void portable_init(core_portable *p, int *argc, char *argv[])
 {
-	//#error "Call board initialization routines in portable init (if needed), in particular initialize UART!\n"
+	/* Initialize the UartNs550 driver so that it's ready to use */
+    configASSERT(XUartNs550_Initialize(&UartNs550_0, XPAR_UARTNS550_0_DEVICE_ID) == XST_SUCCESS);
+
+    /* Perform a self-test to ensure that the hardware was built correctly */
+    configASSERT(XUartNs550_SelfTest(&UartNs550_0) == XST_SUCCESS);
+
 	if (sizeof(ee_ptr_int) != sizeof(ee_u8 *)) {
 		ee_printf("ERROR! Please define ee_ptr_int to a type that holds a pointer!\n");
 	}
@@ -117,6 +139,8 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 		ee_printf("ERROR! Please define ee_u32 to a 32b unsigned type!\n");
 	}
 	p->portable_id=1;
+
+	ee_printf("init OK\r\n");
 }
 /* Function : portable_fini
 	Target specific final code 
@@ -124,6 +148,11 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 void portable_fini(core_portable *p)
 {
 	p->portable_id=0;
+
+	ee_printf("finished\r\n");
+	configASSERT(0);
 }
 
-
+void uart_send_char(char c) {
+  XUartNs550_SendByte(UartNs550_0.BaseAddress, c);
+}

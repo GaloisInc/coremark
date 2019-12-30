@@ -256,10 +256,10 @@ list_head *core_list_init(ee_u32 blksize, list_head *memblock, ee_s16 seed) {
 	ee_printf("Initialized list:\n");
 	finder=list;
 	while (finder) {
-		ee_printf("[%04x,%04x]",finder->info->idx,(ee_u16)finder->info->data16);
+		ee_printf("[%04x,%04x]\r\n",finder->info->idx,(ee_u16)finder->info->data16);
 		finder=finder->next;
 	}
-	ee_printf("\n");
+	ee_printf("\r\n");
 #endif
 	return list;
 }

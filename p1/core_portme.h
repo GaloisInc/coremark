@@ -15,7 +15,6 @@ limitations under the License.
 
 Original Author: Shay Gal-on
 */
-#error "hello"
 /* Topic : Description
 	This file contains configuration constants required to execute on different platforms
 */
@@ -81,14 +80,20 @@ Original Author: Shay Gal-on
 	*Imprtant* :
 	ee_ptr_int needs to be the data type used to hold pointers, otherwise coremark may fail!!!
 */
-typedef signed short ee_s16;
-typedef unsigned short ee_u16;
-typedef signed int ee_s32;
+#include <stddef.h>
+#include <stdint.h>
+
+typedef uint64_t ee_u64;
+
+typedef int16_t ee_s16;
+typedef uint16_t ee_u16;
+typedef int32_t ee_s32;
 typedef double ee_f32;
-typedef unsigned char ee_u8;
-typedef unsigned int ee_u32;
+typedef uint8_t ee_u8;
+typedef uint32_t ee_u32;
+typedef uint64_t ee_u64;
 typedef ee_u32 ee_ptr_int;
-typedef size_t ee_size_t;
+typedef uint32_t ee_size_t;
 #define NULL ((void *)0)
 /* align_mem :
 	This macro is used to align an offset to point to a 32b value. It is used in the Matrix algorithm to initialize the input memory blocks.
@@ -98,7 +103,7 @@ typedef size_t ee_size_t;
 /* Configuration : CORE_TICKS
 	Define type of return from the timing functions.
  */
-#define CORETIMETYPE ee_u32 
+#define CORETIMETYPE ee_u64
 typedef ee_u32 CORE_TICKS;
 
 /* Configuration : SEED_METHOD
@@ -122,7 +127,7 @@ typedef ee_u32 CORE_TICKS;
 	MEM_STACK - to allocate the data block on the stack (NYI).
 */
 #ifndef MEM_METHOD
-#define MEM_METHOD MEM_STACK
+#define MEM_METHOD MEM_STATIC
 #endif
 
 /* Configuration : MULTITHREAD
@@ -158,7 +163,7 @@ typedef ee_u32 CORE_TICKS;
 	This flag only matters if MULTITHREAD has been defined to a value greater then 1.
 */
 #ifndef MAIN_HAS_NOARGC 
-#define MAIN_HAS_NOARGC 0
+#define MAIN_HAS_NOARGC 1
 #endif
 
 /* Configuration : MAIN_HAS_NORETURN
@@ -173,7 +178,7 @@ typedef ee_u32 CORE_TICKS;
 #endif
 
 /* Variable : default_num_contexts
-	Not used for this simple port, must cintain the value 1.
+	Not used for this simple port, must contain the value 1.
 */
 extern ee_u32 default_num_contexts;
 
@@ -195,6 +200,32 @@ void portable_fini(core_portable *p);
 #endif
 #endif
 
+#define CPU_CLOCK_HZ ((ee_u32)(50000000))
+
+#define XPAR_UARTNS550_0_DEVICE_ID 0
+#define XPAR_UART_USE_POLLING_MODE 1
+#define XPAR_XUARTNS550_NUM_INSTANCES 1
+#define XPAR_DEFAULT_BAUD_RATE 115200
+
+#define BSP_USE_UART0 1
+#define XPAR_UARTNS550_0_DEVICE_ID 0
+#define XPAR_UARTNS550_0_BAUD_RATE XPAR_DEFAULT_BAUD_RATE
+#define XPAR_UARTNS550_0_BASEADDR 0x62300000ULL
+#define XPAR_UARTNS550_0_CLOCK_HZ CPU_CLOCK_HZ
+
+
 int ee_printf(const char *fmt, ...);
+
+void uart_send_char(char c);
+
+/* Normal assert() semantics without relying on the provision of an assert.h
+header file. */
+#define configASSERT(x)           \
+    if ((x) == 0)                 \
+    {                             \
+        __asm volatile("ebreak"); \
+        for (;;)                  \
+            ;                     \
+    }
 
 #endif /* CORE_PORTME_H */
