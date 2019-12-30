@@ -80,8 +80,7 @@ static CORETIMETYPE start_time_val, stop_time_val;
 	or zeroing some system parameters - e.g. setting the cpu clocks cycles to 0.
 */
 void start_time(void) {
-	GETMYTIME(&start_time_val );
-	ee_printf("start time: %lu\r\n",start_time_val);
+	GETMYTIME(&start_time_val );      
 }
 /* Function : stop_time
 	This function will be called right after ending the timed portion of the benchmark.
@@ -91,7 +90,6 @@ void start_time(void) {
 */
 void stop_time(void) {
 	GETMYTIME(&stop_time_val );      
-	ee_printf("stop time: %lu\r\n",stop_time_val);
 }
 /* Function : get_time
 	Return an abstract "ticks" number that signifies time on the system.
@@ -104,7 +102,6 @@ void stop_time(void) {
 */
 CORE_TICKS get_time(void) {
 	CORE_TICKS elapsed=(CORE_TICKS)(MYTIMEDIFF(stop_time_val, start_time_val));
-	ee_printf("elapsed ticks: %lu\r\n", elapsed);
 	return elapsed;
 }
 /* Function : time_in_secs
@@ -115,7 +112,6 @@ CORE_TICKS get_time(void) {
 */
 secs_ret time_in_secs(CORE_TICKS ticks) {
 	secs_ret retval=(secs_ret) (ticks / EE_TICKS_PER_SEC);
-	ee_printf("secs_ret = %u\r\n", retval);
 	return retval;
 }
 
