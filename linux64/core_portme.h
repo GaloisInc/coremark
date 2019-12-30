@@ -28,7 +28,7 @@ Original Author: Shay Gal-on
 	Define to 1 if the platform supports floating point.
 */
 #ifndef HAS_FLOAT 
-#define HAS_FLOAT 1
+#define HAS_FLOAT 0
 #endif
 /* Configuration: HAS_TIME_H
 	Define to 1 if platform has the time.h header file,
@@ -42,7 +42,7 @@ Original Author: Shay Gal-on
 	and implementation of functions thereof.
 */
 #ifndef USE_CLOCK
-#define USE_CLOCK 0
+#define USE_CLOCK 1
 #endif
 /* Configuration: HAS_STDIO
 	Define to 1 if the platform has stdio.h.
