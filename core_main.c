@@ -259,6 +259,7 @@ MAIN_RETURN_TYPE main(int argc, char *argv[]) {
 			break;
 		default:
 			total_errors=-1;
+			portable_slow_clock();
 			break;
 	}
 	if (known_id>=0) {

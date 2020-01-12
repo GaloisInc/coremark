@@ -58,6 +58,16 @@ CORETIMETYPE barebones_clock() {
 #define SAMPLE_TIME_IMPLEMENTATION 1
 #define EE_TICKS_PER_SEC (timebase/ TIMER_RES_DIVIDER)
 
+
+//defines for the clock-change process, part of portable_init
+#define PRCI_CTRL_ADDR 0x10008000UL
+#define PRCI_HFROSCCFG (0x0000)
+#define PRCI_PLLCFG (0x0008)
+#define ROSC_EN(x) (((x) & 0x1) << 30)
+#define PLL_REFSEL(x) (((x) & 0x1) << 17)
+#define PLL_BYPASS(x) (((x) & 0x1) << 18)
+#define PLL_SEL(x) (((x) & 0x1) << 16)
+
 /** Define Host specific (POSIX), or target specific global time variables. */
 static CORETIMETYPE start_time_val, stop_time_val;
 
@@ -109,6 +119,23 @@ ee_u32 default_num_contexts=1;
 	Target specific initialization code
 	Test for some common mistakes.
 */
+
+ 
+/* This function will read a 32-bit value from an MMIO register */
+static inline uint32_t
+mmio_read_u32(unsigned long reg, unsigned int offset)
+{
+	return (*(volatile uint32_t *) ((reg) + (offset)));
+}
+
+/*This function will write a 32-bit value to an MMIO register */
+static inline void
+mmio_write_u32(unsigned long reg, unsigned int offset, uint32_t val)
+{
+	(*(volatile uint32_t *) ((reg) + (offset))) = val;
+}
+
+
 void portable_init(core_portable *p, int *argc, char *argv[])
 {
 	if (sizeof(ee_ptr_int) != sizeof(ee_u8 *)) {
@@ -117,6 +144,10 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 	if (sizeof(ee_u32) != 4) {
 		ee_printf("ERROR! Please define ee_u32 to a 32b unsigned type!\n");
 	}
+
+	//set the pll register up to run at ~350 MHz
+	mmio_write_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG, mmio_read_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG) ^ PLL_BYPASS(1));
+
 	//get timer frequency
 	metal_timer_get_timebase_frequency(0, &timebase);
 
@@ -128,6 +159,17 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 void portable_fini(core_portable *p)
 {
 	p->portable_id=0;
+}
+
+void portable_slow_clock()
+{
+		/* Run off 16 MHz Crystal for accuracy */
+	mmio_write_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG,
+			mmio_read_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG)
+			 | (PLL_REFSEL(1) | PLL_BYPASS(1)));
+	mmio_write_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG,
+			mmio_read_u32(PRCI_CTRL_ADDR, PRCI_PLLCFG)
+			 | (PLL_SEL(1)));
 }
 
 
